@@ -1,0 +1,847 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		05C899A8E4AAE52F181F821E /* Pods_PyttUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED6CE4F33C67A741E4388F9F /* Pods_PyttUITests.framework */; };
+		499C3013043D12A33642024F /* Pods_Pytt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE0181E8D7B7C4A05DF986D4 /* Pods_Pytt.framework */; };
+		D8272E351F2B2D0A00560A5C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8272E341F2B2D0A00560A5C /* AppDelegate.swift */; };
+		D8272E3C1F2B2D0A00560A5C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D8272E3A1F2B2D0A00560A5C /* Main.storyboard */; };
+		D8272E3E1F2B2D0A00560A5C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D8272E3D1F2B2D0A00560A5C /* Assets.xcassets */; };
+		D8272E411F2B2D0A00560A5C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D8272E3F1F2B2D0A00560A5C /* LaunchScreen.storyboard */; };
+		D8272E4C1F2B2D0A00560A5C /* PyttTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8272E4B1F2B2D0A00560A5C /* PyttTests.swift */; };
+		D8272E571F2B2D0A00560A5C /* PyttUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8272E561F2B2D0A00560A5C /* PyttUITests.swift */; };
+		D8272E691F2B311700560A5C /* ApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8272E681F2B311700560A5C /* ApiClient.swift */; };
+		D8272E6B1F2B334400560A5C /* ApiResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8272E6A1F2B334400560A5C /* ApiResponse.swift */; };
+		D8272E6D1F2B357000560A5C /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8272E6C1F2B357000560A5C /* Result.swift */; };
+		D8272E6F1F2B360200560A5C /* JSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8272E6E1F2B360200560A5C /* JSON.swift */; };
+		D8272E721F2B365700560A5C /* ApiRecipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8272E711F2B365700560A5C /* ApiRecipe.swift */; };
+		D832FD0E1F2B422D0074E6FF /* RecipesGateway.swift in Sources */ = {isa = PBXBuildFile; fileRef = D832FD0D1F2B422D0074E6FF /* RecipesGateway.swift */; };
+		D832FD121F2B42F00074E6FF /* ApiRecipesGateway.swift in Sources */ = {isa = PBXBuildFile; fileRef = D832FD111F2B42F00074E6FF /* ApiRecipesGateway.swift */; };
+		D832FD151F2B44280074E6FF /* RecipesApiRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D832FD141F2B44280074E6FF /* RecipesApiRequest.swift */; };
+		D8F244F71F2B3E51005E2DEA /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8F244F61F2B3E51005E2DEA /* Recipe.swift */; };
+		DC3D170BDAAD36B1F05EAF60 /* Pods_PyttTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D0A110DEF121AA6391DACD7 /* Pods_PyttTests.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		D8272E481F2B2D0A00560A5C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D8272E291F2B2D0A00560A5C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D8272E301F2B2D0A00560A5C;
+			remoteInfo = Pytt;
+		};
+		D8272E531F2B2D0A00560A5C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D8272E291F2B2D0A00560A5C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D8272E301F2B2D0A00560A5C;
+			remoteInfo = Pytt;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0DF9BA0BB634360FD37AD902 /* Pods-PyttUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PyttUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-PyttUITests/Pods-PyttUITests.release.xcconfig"; sourceTree = "<group>"; };
+		3CBE3E4EEEA67076737BE460 /* Pods-PyttUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PyttUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PyttUITests/Pods-PyttUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		5D0A110DEF121AA6391DACD7 /* Pods_PyttTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PyttTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7430F2B21A14D995E557137B /* Pods-PyttTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PyttTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PyttTests/Pods-PyttTests.debug.xcconfig"; sourceTree = "<group>"; };
+		9E63F94D2C2A76068003288C /* Pods-PyttTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PyttTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-PyttTests/Pods-PyttTests.release.xcconfig"; sourceTree = "<group>"; };
+		A834B05149482427575B2676 /* Pods-Pytt.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pytt.release.xcconfig"; path = "Pods/Target Support Files/Pods-Pytt/Pods-Pytt.release.xcconfig"; sourceTree = "<group>"; };
+		B182FC3AD7305241337CDCAA /* Pods-Pytt.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pytt.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Pytt/Pods-Pytt.debug.xcconfig"; sourceTree = "<group>"; };
+		D8272E311F2B2D0A00560A5C /* Pytt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pytt.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D8272E341F2B2D0A00560A5C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		D8272E3B1F2B2D0A00560A5C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		D8272E3D1F2B2D0A00560A5C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		D8272E401F2B2D0A00560A5C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		D8272E421F2B2D0A00560A5C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D8272E471F2B2D0A00560A5C /* PyttTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PyttTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D8272E4B1F2B2D0A00560A5C /* PyttTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PyttTests.swift; sourceTree = "<group>"; };
+		D8272E4D1F2B2D0A00560A5C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D8272E521F2B2D0A00560A5C /* PyttUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PyttUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D8272E561F2B2D0A00560A5C /* PyttUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PyttUITests.swift; sourceTree = "<group>"; };
+		D8272E581F2B2D0A00560A5C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D8272E681F2B311700560A5C /* ApiClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiClient.swift; sourceTree = "<group>"; };
+		D8272E6A1F2B334400560A5C /* ApiResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiResponse.swift; sourceTree = "<group>"; };
+		D8272E6C1F2B357000560A5C /* Result.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
+		D8272E6E1F2B360200560A5C /* JSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSON.swift; sourceTree = "<group>"; };
+		D8272E711F2B365700560A5C /* ApiRecipe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiRecipe.swift; sourceTree = "<group>"; };
+		D832FD0D1F2B422D0074E6FF /* RecipesGateway.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipesGateway.swift; sourceTree = "<group>"; };
+		D832FD111F2B42F00074E6FF /* ApiRecipesGateway.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiRecipesGateway.swift; sourceTree = "<group>"; };
+		D832FD141F2B44280074E6FF /* RecipesApiRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipesApiRequest.swift; sourceTree = "<group>"; };
+		D8F244F61F2B3E51005E2DEA /* Recipe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
+		ED6CE4F33C67A741E4388F9F /* Pods_PyttUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PyttUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FE0181E8D7B7C4A05DF986D4 /* Pods_Pytt.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Pytt.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D8272E2E1F2B2D0A00560A5C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				499C3013043D12A33642024F /* Pods_Pytt.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D8272E441F2B2D0A00560A5C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DC3D170BDAAD36B1F05EAF60 /* Pods_PyttTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D8272E4F1F2B2D0A00560A5C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				05C899A8E4AAE52F181F821E /* Pods_PyttUITests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		11A36587E7A271830471FB23 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B182FC3AD7305241337CDCAA /* Pods-Pytt.debug.xcconfig */,
+				A834B05149482427575B2676 /* Pods-Pytt.release.xcconfig */,
+				7430F2B21A14D995E557137B /* Pods-PyttTests.debug.xcconfig */,
+				9E63F94D2C2A76068003288C /* Pods-PyttTests.release.xcconfig */,
+				3CBE3E4EEEA67076737BE460 /* Pods-PyttUITests.debug.xcconfig */,
+				0DF9BA0BB634360FD37AD902 /* Pods-PyttUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		D8272E281F2B2D0A00560A5C = {
+			isa = PBXGroup;
+			children = (
+				D8272E331F2B2D0A00560A5C /* Pytt */,
+				D8272E4A1F2B2D0A00560A5C /* PyttTests */,
+				D8272E551F2B2D0A00560A5C /* PyttUITests */,
+				D8272E321F2B2D0A00560A5C /* Products */,
+				11A36587E7A271830471FB23 /* Pods */,
+				E449A10860C73BAE95FAA7BF /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		D8272E321F2B2D0A00560A5C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D8272E311F2B2D0A00560A5C /* Pytt.app */,
+				D8272E471F2B2D0A00560A5C /* PyttTests.xctest */,
+				D8272E521F2B2D0A00560A5C /* PyttUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D8272E331F2B2D0A00560A5C /* Pytt */ = {
+			isa = PBXGroup;
+			children = (
+				D8272E641F2B2F9F00560A5C /* Core */,
+				D8272E651F2B2FAB00560A5C /* Scenes */,
+				D8272E661F2B2FB900560A5C /* EntityGateway */,
+				D8272E671F2B2FD400560A5C /* Other */,
+				D8272E341F2B2D0A00560A5C /* AppDelegate.swift */,
+				D8272E3A1F2B2D0A00560A5C /* Main.storyboard */,
+				D8272E3D1F2B2D0A00560A5C /* Assets.xcassets */,
+				D8272E3F1F2B2D0A00560A5C /* LaunchScreen.storyboard */,
+				D8272E421F2B2D0A00560A5C /* Info.plist */,
+			);
+			path = Pytt;
+			sourceTree = "<group>";
+		};
+		D8272E4A1F2B2D0A00560A5C /* PyttTests */ = {
+			isa = PBXGroup;
+			children = (
+				D8272E4B1F2B2D0A00560A5C /* PyttTests.swift */,
+				D8272E4D1F2B2D0A00560A5C /* Info.plist */,
+			);
+			path = PyttTests;
+			sourceTree = "<group>";
+		};
+		D8272E551F2B2D0A00560A5C /* PyttUITests */ = {
+			isa = PBXGroup;
+			children = (
+				D8272E561F2B2D0A00560A5C /* PyttUITests.swift */,
+				D8272E581F2B2D0A00560A5C /* Info.plist */,
+			);
+			path = PyttUITests;
+			sourceTree = "<group>";
+		};
+		D8272E641F2B2F9F00560A5C /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				D8F244F51F2B3D76005E2DEA /* Entities */,
+				D832FD0F1F2B42390074E6FF /* Gateways */,
+				D8272E6C1F2B357000560A5C /* Result.swift */,
+			);
+			name = Core;
+			sourceTree = "<group>";
+		};
+		D8272E651F2B2FAB00560A5C /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Scenes;
+			sourceTree = "<group>";
+		};
+		D8272E661F2B2FB900560A5C /* EntityGateway */ = {
+			isa = PBXGroup;
+			children = (
+				D8F244F41F2B3807005E2DEA /* API */,
+			);
+			name = EntityGateway;
+			sourceTree = "<group>";
+		};
+		D8272E671F2B2FD400560A5C /* Other */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Other;
+			sourceTree = "<group>";
+		};
+		D8272E701F2B364200560A5C /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				D8272E711F2B365700560A5C /* ApiRecipe.swift */,
+			);
+			name = Entities;
+			sourceTree = "<group>";
+		};
+		D832FD0F1F2B42390074E6FF /* Gateways */ = {
+			isa = PBXGroup;
+			children = (
+				D832FD0D1F2B422D0074E6FF /* RecipesGateway.swift */,
+			);
+			name = Gateways;
+			sourceTree = "<group>";
+		};
+		D832FD101F2B42DF0074E6FF /* Gateways */ = {
+			isa = PBXGroup;
+			children = (
+				D832FD111F2B42F00074E6FF /* ApiRecipesGateway.swift */,
+			);
+			name = Gateways;
+			sourceTree = "<group>";
+		};
+		D832FD131F2B44150074E6FF /* Requests */ = {
+			isa = PBXGroup;
+			children = (
+				D832FD141F2B44280074E6FF /* RecipesApiRequest.swift */,
+			);
+			name = Requests;
+			sourceTree = "<group>";
+		};
+		D8F244F41F2B3807005E2DEA /* API */ = {
+			isa = PBXGroup;
+			children = (
+				D832FD131F2B44150074E6FF /* Requests */,
+				D832FD101F2B42DF0074E6FF /* Gateways */,
+				D8272E701F2B364200560A5C /* Entities */,
+				D8272E6A1F2B334400560A5C /* ApiResponse.swift */,
+				D8272E681F2B311700560A5C /* ApiClient.swift */,
+				D8272E6E1F2B360200560A5C /* JSON.swift */,
+			);
+			name = API;
+			sourceTree = "<group>";
+		};
+		D8F244F51F2B3D76005E2DEA /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				D8F244F61F2B3E51005E2DEA /* Recipe.swift */,
+			);
+			name = Entities;
+			sourceTree = "<group>";
+		};
+		E449A10860C73BAE95FAA7BF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FE0181E8D7B7C4A05DF986D4 /* Pods_Pytt.framework */,
+				5D0A110DEF121AA6391DACD7 /* Pods_PyttTests.framework */,
+				ED6CE4F33C67A741E4388F9F /* Pods_PyttUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		D8272E301F2B2D0A00560A5C /* Pytt */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D8272E5B1F2B2D0A00560A5C /* Build configuration list for PBXNativeTarget "Pytt" */;
+			buildPhases = (
+				6D432E17D96EAEDBA3A4A942 /* [CP] Check Pods Manifest.lock */,
+				D8272E2D1F2B2D0A00560A5C /* Sources */,
+				D8272E2E1F2B2D0A00560A5C /* Frameworks */,
+				D8272E2F1F2B2D0A00560A5C /* Resources */,
+				4887E59E1A85329EE94523EE /* [CP] Embed Pods Frameworks */,
+				A6A3E25E02D70E0F93CD99F9 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Pytt;
+			productName = Pytt;
+			productReference = D8272E311F2B2D0A00560A5C /* Pytt.app */;
+			productType = "com.apple.product-type.application";
+		};
+		D8272E461F2B2D0A00560A5C /* PyttTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D8272E5E1F2B2D0A00560A5C /* Build configuration list for PBXNativeTarget "PyttTests" */;
+			buildPhases = (
+				CED93F1D48B8542FBA176F2A /* [CP] Check Pods Manifest.lock */,
+				D8272E431F2B2D0A00560A5C /* Sources */,
+				D8272E441F2B2D0A00560A5C /* Frameworks */,
+				D8272E451F2B2D0A00560A5C /* Resources */,
+				600A880BF4E8AFC031276FF0 /* [CP] Embed Pods Frameworks */,
+				57654041B9B92082A495B89E /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D8272E491F2B2D0A00560A5C /* PBXTargetDependency */,
+			);
+			name = PyttTests;
+			productName = PyttTests;
+			productReference = D8272E471F2B2D0A00560A5C /* PyttTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		D8272E511F2B2D0A00560A5C /* PyttUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D8272E611F2B2D0A00560A5C /* Build configuration list for PBXNativeTarget "PyttUITests" */;
+			buildPhases = (
+				1FA590B995DDC9801308759C /* [CP] Check Pods Manifest.lock */,
+				D8272E4E1F2B2D0A00560A5C /* Sources */,
+				D8272E4F1F2B2D0A00560A5C /* Frameworks */,
+				D8272E501F2B2D0A00560A5C /* Resources */,
+				45EED828490808A45009D5A1 /* [CP] Embed Pods Frameworks */,
+				00B699A51955FA00DB2A3628 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D8272E541F2B2D0A00560A5C /* PBXTargetDependency */,
+			);
+			name = PyttUITests;
+			productName = PyttUITests;
+			productReference = D8272E521F2B2D0A00560A5C /* PyttUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D8272E291F2B2D0A00560A5C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0830;
+				LastUpgradeCheck = 0830;
+				ORGANIZATIONNAME = Wirecard;
+				TargetAttributes = {
+					D8272E301F2B2D0A00560A5C = {
+						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = 4RSCFV7GSQ;
+						ProvisioningStyle = Automatic;
+					};
+					D8272E461F2B2D0A00560A5C = {
+						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = 4RSCFV7GSQ;
+						ProvisioningStyle = Automatic;
+						TestTargetID = D8272E301F2B2D0A00560A5C;
+					};
+					D8272E511F2B2D0A00560A5C = {
+						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = 4RSCFV7GSQ;
+						ProvisioningStyle = Automatic;
+						TestTargetID = D8272E301F2B2D0A00560A5C;
+					};
+				};
+			};
+			buildConfigurationList = D8272E2C1F2B2D0A00560A5C /* Build configuration list for PBXProject "Pytt" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = D8272E281F2B2D0A00560A5C;
+			productRefGroup = D8272E321F2B2D0A00560A5C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D8272E301F2B2D0A00560A5C /* Pytt */,
+				D8272E461F2B2D0A00560A5C /* PyttTests */,
+				D8272E511F2B2D0A00560A5C /* PyttUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D8272E2F1F2B2D0A00560A5C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D8272E411F2B2D0A00560A5C /* LaunchScreen.storyboard in Resources */,
+				D8272E3E1F2B2D0A00560A5C /* Assets.xcassets in Resources */,
+				D8272E3C1F2B2D0A00560A5C /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D8272E451F2B2D0A00560A5C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D8272E501F2B2D0A00560A5C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		00B699A51955FA00DB2A3628 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PyttUITests/Pods-PyttUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		1FA590B995DDC9801308759C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		45EED828490808A45009D5A1 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PyttUITests/Pods-PyttUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4887E59E1A85329EE94523EE /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Pytt/Pods-Pytt-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		57654041B9B92082A495B89E /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PyttTests/Pods-PyttTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		600A880BF4E8AFC031276FF0 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PyttTests/Pods-PyttTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6D432E17D96EAEDBA3A4A942 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		A6A3E25E02D70E0F93CD99F9 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Pytt/Pods-Pytt-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CED93F1D48B8542FBA176F2A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D8272E2D1F2B2D0A00560A5C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D832FD0E1F2B422D0074E6FF /* RecipesGateway.swift in Sources */,
+				D8272E6B1F2B334400560A5C /* ApiResponse.swift in Sources */,
+				D8272E6F1F2B360200560A5C /* JSON.swift in Sources */,
+				D8F244F71F2B3E51005E2DEA /* Recipe.swift in Sources */,
+				D8272E351F2B2D0A00560A5C /* AppDelegate.swift in Sources */,
+				D8272E721F2B365700560A5C /* ApiRecipe.swift in Sources */,
+				D832FD151F2B44280074E6FF /* RecipesApiRequest.swift in Sources */,
+				D8272E6D1F2B357000560A5C /* Result.swift in Sources */,
+				D8272E691F2B311700560A5C /* ApiClient.swift in Sources */,
+				D832FD121F2B42F00074E6FF /* ApiRecipesGateway.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D8272E431F2B2D0A00560A5C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D8272E4C1F2B2D0A00560A5C /* PyttTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D8272E4E1F2B2D0A00560A5C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D8272E571F2B2D0A00560A5C /* PyttUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		D8272E491F2B2D0A00560A5C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D8272E301F2B2D0A00560A5C /* Pytt */;
+			targetProxy = D8272E481F2B2D0A00560A5C /* PBXContainerItemProxy */;
+		};
+		D8272E541F2B2D0A00560A5C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D8272E301F2B2D0A00560A5C /* Pytt */;
+			targetProxy = D8272E531F2B2D0A00560A5C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		D8272E3A1F2B2D0A00560A5C /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D8272E3B1F2B2D0A00560A5C /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		D8272E3F1F2B2D0A00560A5C /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D8272E401F2B2D0A00560A5C /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		D8272E591F2B2D0A00560A5C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		D8272E5A1F2B2D0A00560A5C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		D8272E5C1F2B2D0A00560A5C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B182FC3AD7305241337CDCAA /* Pods-Pytt.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 4RSCFV7GSQ;
+				INFOPLIST_FILE = Pytt/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.johan.Pytt;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		D8272E5D1F2B2D0A00560A5C /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A834B05149482427575B2676 /* Pods-Pytt.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 4RSCFV7GSQ;
+				INFOPLIST_FILE = Pytt/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.johan.Pytt;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		D8272E5F1F2B2D0A00560A5C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7430F2B21A14D995E557137B /* Pods-PyttTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = 4RSCFV7GSQ;
+				INFOPLIST_FILE = PyttTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.johan.PyttTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Pytt.app/Pytt";
+			};
+			name = Debug;
+		};
+		D8272E601F2B2D0A00560A5C /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9E63F94D2C2A76068003288C /* Pods-PyttTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = 4RSCFV7GSQ;
+				INFOPLIST_FILE = PyttTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.johan.PyttTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Pytt.app/Pytt";
+			};
+			name = Release;
+		};
+		D8272E621F2B2D0A00560A5C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3CBE3E4EEEA67076737BE460 /* Pods-PyttUITests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				DEVELOPMENT_TEAM = 4RSCFV7GSQ;
+				INFOPLIST_FILE = PyttUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.johan.PyttUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = Pytt;
+			};
+			name = Debug;
+		};
+		D8272E631F2B2D0A00560A5C /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0DF9BA0BB634360FD37AD902 /* Pods-PyttUITests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				DEVELOPMENT_TEAM = 4RSCFV7GSQ;
+				INFOPLIST_FILE = PyttUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.johan.PyttUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = Pytt;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D8272E2C1F2B2D0A00560A5C /* Build configuration list for PBXProject "Pytt" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D8272E591F2B2D0A00560A5C /* Debug */,
+				D8272E5A1F2B2D0A00560A5C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D8272E5B1F2B2D0A00560A5C /* Build configuration list for PBXNativeTarget "Pytt" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D8272E5C1F2B2D0A00560A5C /* Debug */,
+				D8272E5D1F2B2D0A00560A5C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D8272E5E1F2B2D0A00560A5C /* Build configuration list for PBXNativeTarget "PyttTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D8272E5F1F2B2D0A00560A5C /* Debug */,
+				D8272E601F2B2D0A00560A5C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D8272E611F2B2D0A00560A5C /* Build configuration list for PBXNativeTarget "PyttUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D8272E621F2B2D0A00560A5C /* Debug */,
+				D8272E631F2B2D0A00560A5C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D8272E291F2B2D0A00560A5C /* Project object */;
+}
