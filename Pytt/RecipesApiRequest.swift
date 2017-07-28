@@ -20,6 +20,10 @@ let apiKey = "055a3a352bf62b2fefbc53056a93828b"
 let baseUrl = "http://food2fork.com/api/"
 let searchApi = "search?"
 
+
+
+//http://iyadagha.com/using-mvp-ios-swift/
+
 struct RecipesApiRequest: ApiRequest {
     
     var urlRequest: URLRequest
@@ -30,7 +34,7 @@ struct RecipesApiRequest: ApiRequest {
         let escapedIngredients = ingredients.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed)!
         let urlString = baseUrl + searchApi + "key=" + apiKey + "&q=" + escapedIngredients
         let url = URL(string: urlString)!
-        urlRequest = URLRequest(url: url)
-        urlRequest.httpMethod = "GET"
+        self.urlRequest = URLRequest(url: url)
+        self.urlRequest.httpMethod = "GET"
     }
 }

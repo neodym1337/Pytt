@@ -6,6 +6,18 @@
 //  Copyright © 2017 Wirecard. All rights reserved.
 //
 
+/*
+ 
+ 
+ Links
+ 
+ Core ML https://www.appcoda.com/coreml-introduction/
+ https://stackoverflow.com/questions/45270886/converting-a-caffe-model-to-coreml-using-coremltools-results-in-inconsistent-per
+ 
+ 
+ */
+
+
 import UIKit
 
 @UIApplicationMain
