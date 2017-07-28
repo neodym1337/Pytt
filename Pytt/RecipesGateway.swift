@@ -11,5 +11,5 @@ import Foundation
 typealias FetchRecipesEntityGatewayCompletionHandler = (_ recipes: Result<[Recipe]>) -> Void
 
 protocol RecipesGateway {
-    func fetchRecipes(ingredient: String, completionHandler: @escaping FetchRecipesEntityGatewayCompletionHandler)
+    func fetchRecipes(ingredients: String, completionHandler: @escaping FetchRecipesEntityGatewayCompletionHandler)
 }

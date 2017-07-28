@@ -15,6 +15,9 @@
  https://stackoverflow.com/questions/45270886/converting-a-caffe-model-to-coreml-using-coremltools-results-in-inconsistent-per
  
  
+ 
+ MVP https://github.com/FortechRomania/ios-mvp-clean-architecture
+ 
  */
 
 

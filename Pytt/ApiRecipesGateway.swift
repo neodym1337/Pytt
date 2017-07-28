@@ -19,7 +19,7 @@ class ApiBooksGatewayImplementation: ApiRecipesGateway {
         self.apiClient = apiClient
     }
     
-    func fetchRecipes(ingredient: String, completionHandler: @escaping FetchRecipesEntityGatewayCompletionHandler) {
-        
+    func fetchRecipes(ingredients: String, completionHandler: @escaping FetchRecipesEntityGatewayCompletionHandler) {
+        //FINiSH
     }
 }

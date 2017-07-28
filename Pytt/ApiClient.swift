@@ -33,6 +33,28 @@ class ApiClientImplementation: ApiClient {
     //MARK: - ApiClient
     
     func execute<T: InitializableWithData>(request: ApiRequest, completionHandler: @escaping (Result<ApiResponse<T>>) -> Void) {
-        //let urlSession.dataTask(with: request.urlRequest) {}
+        let dataTask = urlSession.dataTask(with: request.urlRequest) { (data, response, error) in
+            // No response
+            guard let httpUrlResponse = response as? HTTPURLResponse else {
+                completionHandler(Result.failure(NetworkRequestError(error: error)))
+                return
+            }
+            
+            let successRange = 200...299
+            if successRange.contains(httpUrlResponse.statusCode) { //Got response
+                do {
+                    let response = try ApiResponse<T>(data:data, httpUrlResponse: httpUrlResponse)
+                    //Could get response
+                    completionHandler(Result.success(response))
+                } catch {
+                    completionHandler(Result.failure(error))
+                }
+            }else {
+                completionHandler(Result.failure(ApiError(data: data, httpUrlResponse: httpUrlResponse)))
+            }
+        }
+        
+        
+        dataTask.resume()
     }
 }
