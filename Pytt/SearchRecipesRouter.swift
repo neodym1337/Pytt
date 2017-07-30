@@ -8,6 +8,6 @@
 
 import Foundation
 
-protocol SearchRecipeRouter: ViewRouter {
+protocol SearchRecipesRouter: ViewRouter {
     
 }
