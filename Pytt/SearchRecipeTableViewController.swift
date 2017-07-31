@@ -30,6 +30,6 @@ class SearchRecipesTableViewController: UITableViewController, SearchRecipeView 
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: <#T##String#>, for: <#T##IndexPath#>)
+        let cell = tableView.dequeueReusableCell(withIdentifier: SearchRecipeTableViewCellImplementation.defaultReuseIdentifier, for: indexPath)
     }
 }

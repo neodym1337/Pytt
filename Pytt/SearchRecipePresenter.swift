@@ -27,7 +27,7 @@ class SearchRecipesPresenterImplementation: SearchRecipesPresenter {
     
     internal let router:SearchRecipesRouter
     
-    var recipes = [Recipe]()
+    var recipes = [RecipeCellPresenter]()
     
     var numberOfRecipes: Int {
         return recipes.count
@@ -42,7 +42,7 @@ class SearchRecipesPresenterImplementation: SearchRecipesPresenter {
     }
     
     func viewDidLoad() {
-        
+        //reguster cell
     }
     
     func configure(cell: String, forRow row: Int) {
@@ -51,20 +51,20 @@ class SearchRecipesPresenterImplementation: SearchRecipesPresenter {
     }
     
     func didSelect(row: Int) {
+        //TODO: Finish implementationa
         //let recipe = recipes[row]
         //router.presentDetailsView(for: recipe)
     }
     
     func triggerSearch() {
-        self.displayRecipeSearchListUseCase.displayRecipes(ingredients: "test") { (result) in
+        self.displayRecipeSearchListUseCase.displayRecipes(ingredients: "test") { [unowned self] (result) in
             switch result {
-            case let .success(recipe):
-                //self.handleBooksReceived(books)
-                print(recipe)
+            case let .success(recipes):
+                self.recipes = recipes.map {
+                    return RecipeCellPresenter(title: $0.title, rating: $0.rank, imageUrlString: $0.imageUrl)
+                }
             case let .failure(error):
-                //self.handleBooksError(error)
                 print(error)
-
             }
         }
     }

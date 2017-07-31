@@ -21,10 +21,10 @@ class SearchRecipeTableViewImplementation: UITableViewCell, SearchRecipesTableVi
     }
     
     func display(rating: String) {
-        <#code#>
+        
     }
     
     func display(imageUrl: String) {
-        <#code#>
+        
     }
 }
