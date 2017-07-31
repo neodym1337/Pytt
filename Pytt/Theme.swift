@@ -3,10 +3,11 @@
 //  Pytt
 //
 //  Created by Hosk, Johan on 2017-07-31.
-//  Copyright © 2017 Wirecard. All rights reserved.
+//  Copyright © 2017 Johan Hosk. All rights reserved.
 //
 
-//http://blog.visme.co/website-color-schemes/
+//http://blog.visme.co/website-color-schemes/ schemes
+//https://www.vecteezy.com/vector-art/82080-free-fast-food-vector-icons icons
 
 
 

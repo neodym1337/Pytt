@@ -405,7 +405,7 @@
 			attributes = {
 				LastSwiftUpdateCheck = 0830;
 				LastUpgradeCheck = 0830;
-				ORGANIZATIONNAME = Wirecard;
+				ORGANIZATIONNAME = "Johan Hosk";
 				TargetAttributes = {
 					D8272E301F2B2D0A00560A5C = {
 						CreatedOnToolsVersion = 8.3.3;
