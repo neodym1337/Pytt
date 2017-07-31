@@ -1,14 +1,17 @@
 PODS:
+  - Cosmos (8.0.2)
   - SDWebImage (4.0.0):
     - SDWebImage/Core (= 4.0.0)
   - SDWebImage/Core (4.0.0)
 
 DEPENDENCIES:
+  - Cosmos
   - SDWebImage
 
 SPEC CHECKSUMS:
+  Cosmos: 007c0b8e33a85e5363911bdd933571bbe221f7ef
   SDWebImage: 76a6348bdc74eb5a55dd08a091ef298e56b55e41
 
-PODFILE CHECKSUM: 777707056bbbcc10fa69cf9fbfbfebccb440f22f
+PODFILE CHECKSUM: 37601dcd8d75064381d45e38b53452ba7a666a79
 
 COCOAPODS: 1.2.0

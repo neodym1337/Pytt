@@ -6,8 +6,37 @@
 //  Copyright © 2017 Wirecard. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 protocol SearchRecipesRouter: ViewRouter {
+    func presentDetailsView(for recipe: Recipe)
+    func presentScanFoodView()
+}
+
+class SearchRecipesRouterImplementation: SearchRecipesRouter {
+    fileprivate weak var searchRecipesTableViewController: SearchRecipesTableViewController?
+    fileprivate var recipe:Recipe!
+    
+    init(searchRecipesTableViewController: SearchRecipesTableViewController) {
+        self.searchRecipesTableViewController = searchRecipesTableViewController
+    }
+    
+    func presentDetailsView(for recipe: Recipe) {
+        self.recipe = recipe
+        //Perform segue for detail view
+    }
+    
+    func presentScanFoodView() {
+        //perform
+    }
+    
+    func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        if let bookDetailsTableViewController = segue.destination as? BookDetailsTableViewController {
+//            bookDetailsTableViewController.configurator = BookDetailsConfiguratorImplementation(book: book)
+//        } else if let navigationController = segue.destination as? UINavigationController,
+//            let addBookViewController = navigationController.topViewController as? AddBookViewController {
+//            addBookViewController.configurator = AddBookConfiguratorImplementation(addBookPresenterDelegate: addBookPresenterDelegate)
+//        }
+    }
     
 }

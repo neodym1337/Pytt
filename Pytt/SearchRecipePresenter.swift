@@ -13,11 +13,6 @@ protocol SearchRecipeView: class {
     func displayRecipesRetrievalError(title: String, message: String)
 }
 
-protocol RecipeCellView {
-    func display(title: String)
-    func display(imageUrl: String)
-}
-
 protocol SearchRecipesPresenter {
     var numberOfRecipes: Int { get }
     var router: SearchRecipesRouter { get }
@@ -56,19 +51,19 @@ class SearchRecipesPresenterImplementation: SearchRecipesPresenter {
     }
     
     func didSelect(row: Int) {
-        let book = books[row]
-        router.presentDetailsView(for: book)
+        //let recipe = recipes[row]
+        //router.presentDetailsView(for: recipe)
     }
     
     func triggerSearch() {
         self.displayRecipeSearchListUseCase.displayRecipes(ingredients: "test") { (result) in
             switch result {
-            case let .success(books):
+            case let .success(recipe):
                 //self.handleBooksReceived(books)
-                print(books)
+                print(recipe)
             case let .failure(error):
                 //self.handleBooksError(error)
-                print(books)
+                print(error)
 
             }
         }

@@ -8,4 +8,28 @@
 
 //Check here for basic pattern https://stackoverflow.com/documentation/ios/9467/mvp-architecture#t=201707281252273684482
 
-import Foundation
+import UIKit
+
+class SearchRecipesTableViewController: UITableViewController, SearchRecipeView {
+    
+    var configurator = SearchRecipesConfiguratorImplementation()
+    var presenter: SearchRecipesPresenter!
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        configurator.configure(searchRecipesTableViewController: self)
+        presenter.viewDidLoad()
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        presenter.router.prepare(for: segue, sender: sender)
+    }
+    
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return presenter.numberOfRecipes
+    }
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: <#T##String#>, for: <#T##IndexPath#>)
+    }
+}

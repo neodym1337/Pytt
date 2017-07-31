@@ -12,7 +12,7 @@ protocol ApiRecipesGateway: RecipesGateway {
 
 }
 
-class ApiBooksGatewayImplementation: ApiRecipesGateway {
+class ApiRecipesGatewayImplementation: ApiRecipesGateway {
     let apiClient: ApiClient
     
     init(apiClient: ApiClient) {
