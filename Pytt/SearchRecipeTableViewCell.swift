@@ -14,7 +14,7 @@ protocol SearchRecipesTableViewCell {
     func display(rating:String)
 }
 
-class SearchRecipeTableViewImplementation: UITableViewCell, SearchRecipesTableViewCell {
+class SearchRecipeTableViewCellImplementation: UITableViewCell, SearchRecipesTableViewCell {
     
     func display(title: String) {
         

@@ -6,9 +6,9 @@
 //  Copyright © 2017 Johan Hosk. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
-protocol SearchRecipeView: class {
+protocol SearchRecipesView: class {
     func refreshRecipesView()
     func displayRecipesRetrievalError(title: String, message: String)
 }
@@ -43,6 +43,7 @@ class SearchRecipesPresenterImplementation: SearchRecipesPresenter {
     
     func viewDidLoad() {
         //reguster cell
+        
     }
     
     func configure(cell: String, forRow row: Int) {
@@ -56,8 +57,8 @@ class SearchRecipesPresenterImplementation: SearchRecipesPresenter {
         //router.presentDetailsView(for: recipe)
     }
     
-    func triggerSearch() {
-        self.displayRecipeSearchListUseCase.displayRecipes(ingredients: "test") { [unowned self] (result) in
+    func searchRecipes(for ingredients: String) {
+        self.displayRecipeSearchListUseCase.displayRecipes(ingredients: ingredients) { [unowned self] (result) in
             switch result {
             case let .success(recipes):
                 self.recipes = recipes.map {

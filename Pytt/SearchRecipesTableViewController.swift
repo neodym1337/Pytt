@@ -10,7 +10,7 @@
 
 import UIKit
 
-class SearchRecipesTableViewController: UITableViewController, SearchRecipeView {
+class SearchRecipesTableViewController: UITableViewController, SearchRecipesView {
     
     var configurator = SearchRecipesConfiguratorImplementation()
     var presenter: SearchRecipesPresenter!
@@ -30,6 +30,19 @@ class SearchRecipesTableViewController: UITableViewController, SearchRecipeView 
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: SearchRecipeTableViewCellImplementation.defaultReuseIdentifier, for: indexPath)
+        //let cell = tableView.dequeueReusableCell(withIdentifier: , for: indexPath)
     }
+    
+    //MARK:  - SearchRecipesView
+    
+    func refreshRecipesView() {
+        
+    }
+    
+    func displayRecipesRetrievalError(title: String, message: String) {
+        
+    }
+    
 }
+
+

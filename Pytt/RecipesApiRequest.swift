@@ -8,7 +8,7 @@
 
 import Foundation
 
-
+//http://reza.codes/2017-07-29/how-to-train-your-own-dataset-for-coreml/
 //about http://food2fork.com/about/api
 //apiKey = 055a3a352bf62b2fefbc53056a93828b
 //All search requests should be made to the base search API URL. http://food2fork.com/api/search
