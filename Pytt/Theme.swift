@@ -7,6 +7,7 @@
 //
 
 //http://blog.visme.co/website-color-schemes/ schemes
+//more schems http://blog.visme.co/color-combinations/
 //https://www.vecteezy.com/vector-art/82080-free-fast-food-vector-icons icons
 
 
