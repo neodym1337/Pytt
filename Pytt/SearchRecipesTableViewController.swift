@@ -17,6 +17,7 @@ class SearchRecipesTableViewController: UITableViewController, SearchRecipesView
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
         self.title = "Search recipes"
         configurator.configure(searchRecipesTableViewController: self)
         presenter.viewDidLoad()

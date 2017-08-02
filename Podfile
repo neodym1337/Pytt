@@ -6,6 +6,7 @@ target 'Pytt' do
   use_frameworks!
   pod 'SDWebImage'
   pod 'Cosmos'
+  pod 'SwiftLint'
 
   # Pods for Pytt
 

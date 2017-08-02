@@ -28,7 +28,7 @@ class SearchRecipesPresenterImplementation: SearchRecipesPresenter {
     fileprivate weak var view: SearchRecipesView?
     fileprivate let displayRecipeSearchListUseCase:DisplayRecipeSearchListUseCase
     
-    internal let router:SearchRecipesRouter
+    internal let router: SearchRecipesRouter
     
     var recipes = [RecipeCellPresenter]()
     
@@ -36,7 +36,7 @@ class SearchRecipesPresenterImplementation: SearchRecipesPresenter {
         return recipes.count
     }
     
-    init(view:SearchRecipesView,
+    init(view: SearchRecipesView,
          displayRecipeSearchListUseCase: DisplayRecipeSearchListUseCase,
          router: SearchRecipesRouter) {
         self.view = view
@@ -48,11 +48,11 @@ class SearchRecipesPresenterImplementation: SearchRecipesPresenter {
         searchRecipes(for: "chicken") //TODO: Connect searchbar instead of hardcode
     }
     
-    func configure(cell: SearchRecipesTableViewCell, forRow row: Int) {
+    func configure(cell: SearchRecipesTableViewCell?, forRow row: Int) {
         let recipe = recipes[row]
-        cell.display(title: recipe.title)
-        cell.display(rating: recipe.rating)
-        cell.display(imageUrl: recipe.imageUrl)
+        cell?.display(title: recipe.title)
+        cell?.display(rating: recipe.rating)
+        cell?.display(imageUrl: recipe.imageUrl)
     }
     
     func didSelect(row: Int) {

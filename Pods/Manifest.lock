@@ -3,15 +3,18 @@ PODS:
   - SDWebImage (4.0.0):
     - SDWebImage/Core (= 4.0.0)
   - SDWebImage/Core (4.0.0)
+  - SwiftLint (0.16.1)
 
 DEPENDENCIES:
   - Cosmos
   - SDWebImage
+  - SwiftLint
 
 SPEC CHECKSUMS:
   Cosmos: 007c0b8e33a85e5363911bdd933571bbe221f7ef
   SDWebImage: 76a6348bdc74eb5a55dd08a091ef298e56b55e41
+  SwiftLint: b8b683208cc09640898f16318a7a452274e91f61
 
-PODFILE CHECKSUM: 37601dcd8d75064381d45e38b53452ba7a666a79
+PODFILE CHECKSUM: 22d179a4b898423ba569b60b3c02adad5666e844
 
 COCOAPODS: 1.2.0
