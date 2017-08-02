@@ -12,7 +12,6 @@ struct CoreError: Error {
     var localizedDescription: String {
         return message
     }
-    
     var message = ""
 }
 

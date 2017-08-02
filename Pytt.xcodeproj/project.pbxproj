@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		05C899A8E4AAE52F181F821E /* Pods_PyttUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED6CE4F33C67A741E4388F9F /* Pods_PyttUITests.framework */; };
 		499C3013043D12A33642024F /* Pods_Pytt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE0181E8D7B7C4A05DF986D4 /* Pods_Pytt.framework */; };
+		D81F8C1C1F309AC10075B3BD /* CaptureConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D81F8C1B1F309AC10075B3BD /* CaptureConfigurator.swift */; };
+		D81F8C1E1F309B1D0075B3BD /* CaptureRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D81F8C1D1F309B1D0075B3BD /* CaptureRouter.swift */; };
+		D81F8C201F309C900075B3BD /* ImageDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = D81F8C1F1F309C900075B3BD /* ImageDetector.swift */; };
 		D8272E351F2B2D0A00560A5C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8272E341F2B2D0A00560A5C /* AppDelegate.swift */; };
 		D8272E3C1F2B2D0A00560A5C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D8272E3A1F2B2D0A00560A5C /* Main.storyboard */; };
 		D8272E3E1F2B2D0A00560A5C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D8272E3D1F2B2D0A00560A5C /* Assets.xcassets */; };
@@ -23,9 +26,11 @@
 		D832FD0E1F2B422D0074E6FF /* RecipesGateway.swift in Sources */ = {isa = PBXBuildFile; fileRef = D832FD0D1F2B422D0074E6FF /* RecipesGateway.swift */; };
 		D832FD121F2B42F00074E6FF /* ApiRecipesGateway.swift in Sources */ = {isa = PBXBuildFile; fileRef = D832FD111F2B42F00074E6FF /* ApiRecipesGateway.swift */; };
 		D832FD151F2B44280074E6FF /* RecipesApiRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D832FD141F2B44280074E6FF /* RecipesApiRequest.swift */; };
+		D8566CD41F30B19B00ACBF4E /* VideoPreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8566CD31F30B19B00ACBF4E /* VideoPreviewView.swift */; };
+		D8566CD61F30B4D700ACBF4E /* InterfaceOrientation.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8566CD51F30B4D700ACBF4E /* InterfaceOrientation.swift */; };
 		D85F6D901F2F8DF60023D64C /* CameraPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D85F6D8F1F2F8DF60023D64C /* CameraPresenter.swift */; };
-		D85F6D921F2F8E070023D64C /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D85F6D911F2F8E060023D64C /* CameraViewController.swift */; };
-		D85F6D941F2F8EDC0023D64C /* ImagePickerUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = D85F6D931F2F8EDC0023D64C /* ImagePickerUseCase.swift */; };
+		D85F6D921F2F8E070023D64C /* CaptureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D85F6D911F2F8E060023D64C /* CaptureViewController.swift */; };
+		D85F6D941F2F8EDC0023D64C /* FrameExtractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D85F6D931F2F8EDC0023D64C /* FrameExtractor.swift */; };
 		D88962B81F2F2B7E00EC11D8 /* SearchRecipesConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D88962B71F2F2B7E00EC11D8 /* SearchRecipesConfigurator.swift */; };
 		D8E0204F1F2F31AA008AD6ED /* SearchRecipeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8E0204E1F2F31AA008AD6ED /* SearchRecipeTableViewCell.swift */; };
 		D8E020511F2F3344008AD6ED /* SearchRecipeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D8E020501F2F3344008AD6ED /* SearchRecipeTableViewCell.xib */; };
@@ -68,6 +73,9 @@
 		9E63F94D2C2A76068003288C /* Pods-PyttTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PyttTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-PyttTests/Pods-PyttTests.release.xcconfig"; sourceTree = "<group>"; };
 		A834B05149482427575B2676 /* Pods-Pytt.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pytt.release.xcconfig"; path = "Pods/Target Support Files/Pods-Pytt/Pods-Pytt.release.xcconfig"; sourceTree = "<group>"; };
 		B182FC3AD7305241337CDCAA /* Pods-Pytt.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pytt.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Pytt/Pods-Pytt.debug.xcconfig"; sourceTree = "<group>"; };
+		D81F8C1B1F309AC10075B3BD /* CaptureConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CaptureConfigurator.swift; sourceTree = "<group>"; };
+		D81F8C1D1F309B1D0075B3BD /* CaptureRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CaptureRouter.swift; sourceTree = "<group>"; };
+		D81F8C1F1F309C900075B3BD /* ImageDetector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageDetector.swift; sourceTree = "<group>"; };
 		D8272E311F2B2D0A00560A5C /* Pytt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pytt.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8272E341F2B2D0A00560A5C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D8272E3B1F2B2D0A00560A5C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -88,9 +96,11 @@
 		D832FD0D1F2B422D0074E6FF /* RecipesGateway.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipesGateway.swift; sourceTree = "<group>"; };
 		D832FD111F2B42F00074E6FF /* ApiRecipesGateway.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiRecipesGateway.swift; sourceTree = "<group>"; };
 		D832FD141F2B44280074E6FF /* RecipesApiRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipesApiRequest.swift; sourceTree = "<group>"; };
+		D8566CD31F30B19B00ACBF4E /* VideoPreviewView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoPreviewView.swift; sourceTree = "<group>"; };
+		D8566CD51F30B4D700ACBF4E /* InterfaceOrientation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InterfaceOrientation.swift; sourceTree = "<group>"; };
 		D85F6D8F1F2F8DF60023D64C /* CameraPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraPresenter.swift; sourceTree = "<group>"; };
-		D85F6D911F2F8E060023D64C /* CameraViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
-		D85F6D931F2F8EDC0023D64C /* ImagePickerUseCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagePickerUseCase.swift; sourceTree = "<group>"; };
+		D85F6D911F2F8E060023D64C /* CaptureViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CaptureViewController.swift; sourceTree = "<group>"; };
+		D85F6D931F2F8EDC0023D64C /* FrameExtractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FrameExtractor.swift; sourceTree = "<group>"; };
 		D88962B71F2F2B7E00EC11D8 /* SearchRecipesConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchRecipesConfigurator.swift; sourceTree = "<group>"; };
 		D8E0204E1F2F31AA008AD6ED /* SearchRecipeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchRecipeTableViewCell.swift; sourceTree = "<group>"; };
 		D8E020501F2F3344008AD6ED /* SearchRecipeTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SearchRecipeTableViewCell.xib; sourceTree = "<group>"; };
@@ -242,6 +252,7 @@
 				D8E020541F2F4E98008AD6ED /* ReusableView.swift */,
 				D8E020591F2F6AFD008AD6ED /* UIColor+Hex.swift */,
 				D8E0205B1F2F6B37008AD6ED /* Theme.swift */,
+				D8566CD51F30B4D700ACBF4E /* InterfaceOrientation.swift */,
 			);
 			name = Other;
 			sourceTree = "<group>";
@@ -282,7 +293,9 @@
 			isa = PBXGroup;
 			children = (
 				D85F6D8F1F2F8DF60023D64C /* CameraPresenter.swift */,
-				D85F6D911F2F8E060023D64C /* CameraViewController.swift */,
+				D81F8C1B1F309AC10075B3BD /* CaptureConfigurator.swift */,
+				D85F6D911F2F8E060023D64C /* CaptureViewController.swift */,
+				D81F8C1D1F309B1D0075B3BD /* CaptureRouter.swift */,
 			);
 			name = CameraView;
 			sourceTree = "<group>";
@@ -313,7 +326,9 @@
 			isa = PBXGroup;
 			children = (
 				D8EDD9641F2B63A30044E66B /* DisplayRecipeSearchList.swift */,
-				D85F6D931F2F8EDC0023D64C /* ImagePickerUseCase.swift */,
+				D85F6D931F2F8EDC0023D64C /* FrameExtractor.swift */,
+				D8566CD31F30B19B00ACBF4E /* VideoPreviewView.swift */,
+				D81F8C1F1F309C900075B3BD /* ImageDetector.swift */,
 			);
 			name = UseCases;
 			sourceTree = "<group>";
@@ -426,8 +441,8 @@
 				TargetAttributes = {
 					D8272E301F2B2D0A00560A5C = {
 						CreatedOnToolsVersion = 8.3.3;
-						DevelopmentTeam = 4RSCFV7GSQ;
-						ProvisioningStyle = Automatic;
+						DevelopmentTeam = W6EXZ7FDRM;
+						ProvisioningStyle = Manual;
 					};
 					D8272E461F2B2D0A00560A5C = {
 						CreatedOnToolsVersion = 8.3.3;
@@ -639,15 +654,18 @@
 				D8EDD9621F2B62F00044E66B /* ViewRouter.swift in Sources */,
 				D88962B81F2F2B7E00EC11D8 /* SearchRecipesConfigurator.swift in Sources */,
 				D8EDD9601F2B62C60044E66B /* SearchRecipesRouter.swift in Sources */,
-				D85F6D921F2F8E070023D64C /* CameraViewController.swift in Sources */,
+				D85F6D921F2F8E070023D64C /* CaptureViewController.swift in Sources */,
 				D8E020581F2F5EA5008AD6ED /* RecipeCellPresenter.swift in Sources */,
+				D81F8C1C1F309AC10075B3BD /* CaptureConfigurator.swift in Sources */,
 				D85F6D901F2F8DF60023D64C /* CameraPresenter.swift in Sources */,
 				D8E0205C1F2F6B37008AD6ED /* Theme.swift in Sources */,
 				D8272E6B1F2B334400560A5C /* ApiResponse.swift in Sources */,
 				D8EDD95C1F2B61AA0044E66B /* SearchRecipesTableViewController.swift in Sources */,
 				D8272E6F1F2B360200560A5C /* JSON.swift in Sources */,
 				D8F244F71F2B3E51005E2DEA /* Recipe.swift in Sources */,
-				D85F6D941F2F8EDC0023D64C /* ImagePickerUseCase.swift in Sources */,
+				D85F6D941F2F8EDC0023D64C /* FrameExtractor.swift in Sources */,
+				D81F8C201F309C900075B3BD /* ImageDetector.swift in Sources */,
+				D8566CD41F30B19B00ACBF4E /* VideoPreviewView.swift in Sources */,
 				D8272E351F2B2D0A00560A5C /* AppDelegate.swift in Sources */,
 				D8EDD9651F2B63A30044E66B /* DisplayRecipeSearchList.swift in Sources */,
 				D8272E721F2B365700560A5C /* ApiRecipe.swift in Sources */,
@@ -657,7 +675,9 @@
 				D8E020551F2F4E98008AD6ED /* ReusableView.swift in Sources */,
 				D8E020531F2F4DC6008AD6ED /* UITableViewCell+Identifier.swift in Sources */,
 				D8272E691F2B311700560A5C /* ApiClient.swift in Sources */,
+				D8566CD61F30B4D700ACBF4E /* InterfaceOrientation.swift in Sources */,
 				D8E0204F1F2F31AA008AD6ED /* SearchRecipeTableViewCell.swift in Sources */,
+				D81F8C1E1F309B1D0075B3BD /* CaptureRouter.swift in Sources */,
 				D832FD121F2B42F00074E6FF /* ApiRecipesGateway.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -813,11 +833,13 @@
 			baseConfigurationReference = B182FC3AD7305241337CDCAA /* Pods-Pytt.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 4RSCFV7GSQ;
+				DEVELOPMENT_TEAM = W6EXZ7FDRM;
 				INFOPLIST_FILE = Pytt/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.johan.Pytt;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "6e5d2a09-f240-4d57-a32c-a597bd7554ba";
+				PROVISIONING_PROFILE_SPECIFIER = "Johan Wildcard Profile";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -827,11 +849,12 @@
 			baseConfigurationReference = A834B05149482427575B2676 /* Pods-Pytt.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 4RSCFV7GSQ;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = Pytt/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.johan.Pytt;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;

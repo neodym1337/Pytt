@@ -9,53 +9,26 @@
 //http://blog.visme.co/website-color-schemes/ schemes
 //more schems http://blog.visme.co/color-combinations/
 //https://www.vecteezy.com/vector-art/82080-free-fast-food-vector-icons icons
-
+//Theming https://medium.com/swift-programming/styling-your-ios-application-using-chameleon-with-the-reusable-stylemanager-in-swift-7d56dc48547a
 
 
 import UIKit
 
-extension Color {
+
+struct Color {
     
-    var value: UIColor {
-        var instanceColor = UIColor.clear
-        
-        switch self {
-        case .border:
-            instanceColor = UIColor(hexString: "#F0B67F")
-            
-        case .theme:
-            instanceColor = UIColor(hexString: "#4FCEAD")
-            
-        case .shadow:
-            instanceColor = UIColor(hexString: "#513C2C")
-            
-        case .darkBackground:
-            instanceColor = UIColor(hexString: "#4FCEAD")
-            
-        case .lightBackground:
-            instanceColor = UIColor(hexString: "#DFF2D8")
-            
-        case .intermidiateBackground:
-            instanceColor = UIColor(hexString: "#4FCEAD")
-            
-        case .darkText:
-            instanceColor = UIColor(hexString: "#513C2C")
-            
-        case .intermidiateText:
-            instanceColor = UIColor(hexString: "#F0B67F")
-            
-        case .lightText:
-            instanceColor = UIColor(hexString: "#F0B67F")
-            
-        case .affirmation:
-            instanceColor = UIColor(hexString: "#4FCEAD")
-            
-        case .negation:
-            instanceColor = UIColor(hexString: "#FE5F55")
-            
-        case .custom(let hexValue, let opacity):
-            instanceColor = UIColor(hexString: hexValue).withAlphaComponent(CGFloat(opacity))
-        }
-        return instanceColor
+    static let theme = UIColor(hexString: "#4FCEAD") //On navigation bars button titles, progress indicator
+    static let border = UIColor(hexString: "#F0B67F") // Hair line separators in between views.
+    static let shadow = UIColor(hexString: "#513C2C") // Shadow colours for card like design.
+    static let darkBackground = UIColor(hexString: "#4FCEAD") // Dark background colour to group UI components with light colour.
+    static let intermidiateBackground = UIColor(hexString: "#4FCEAD") // Used for grouping UI elements with some other colour scheme.
+    static let lightBackground = UIColor(hexString: "#DFF2D8") // Light background colour to group UI components with dark colour.
+    static let darkText = UIColor(hexString: "#513C2C")
+    static let lightText = UIColor(hexString: "#F0B67F")
+    static let affirmation = UIColor(hexString: "#4FCEAD") // Colour to show success, something right for user.
+    
+    func custom(hexString:String, _ opacity:Float) -> UIColor {
+        return UIColor(hexString: hexString).withAlphaComponent(CGFloat(opacity))
     }
+    
 }

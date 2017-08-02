@@ -22,7 +22,7 @@ protocol SearchRecipesPresenter {
 }
 
 class SearchRecipesPresenterImplementation: SearchRecipesPresenter {
-    fileprivate weak var view: SearchRecipeView?
+    fileprivate weak var view: SearchRecipesView?
     fileprivate let displayRecipeSearchListUseCase:DisplayRecipeSearchListUseCase
     
     internal let router:SearchRecipesRouter
@@ -33,7 +33,7 @@ class SearchRecipesPresenterImplementation: SearchRecipesPresenter {
         return recipes.count
     }
     
-    init(view:SearchRecipeView,
+    init(view:SearchRecipesView,
          displayRecipeSearchListUseCase: DisplayRecipeSearchListUseCase,
          router: SearchRecipesRouter) {
         self.view = view

@@ -1,8 +1,8 @@
 //
-//  ImagePickerUseCase.swift
+//  CaptureConfigurator.swift
 //  Pytt
 //
-//  Created by Johan Hosk on 31/07/17.
+//  Created by Hosk, Johan on 2017-08-01.
 //  Copyright © 2017 Johan Hosk. All rights reserved.
 //
 

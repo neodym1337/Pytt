@@ -13,6 +13,7 @@ protocol SearchRecipesConfigurator {
 }
 
 class SearchRecipesConfiguratorImplementation: SearchRecipesConfigurator {
+    
     func configure(searchRecipesTableViewController: SearchRecipesTableViewController) {
         let apiClient = ApiClientImplementation(urlSessionConfiguration: URLSessionConfiguration.default, completionHandlerQueue: OperationQueue.main)
         let apiRecipesGateway = ApiRecipesGatewayImplementation(apiClient: apiClient)
@@ -25,5 +26,10 @@ class SearchRecipesConfiguratorImplementation: SearchRecipesConfigurator {
         let presenter = SearchRecipesPresenterImplementation(view: searchRecipesTableViewController, displayRecipeSearchListUseCase: displaySearchRecipesUseCase, router: router)
         searchRecipesTableViewController.presenter = presenter
         
+        
+//        init(view:SearchRecipesView,
+//        displayRecipeSearchListUseCase: DisplayRecipeSearchListUseCase,
+//        router: SearchRecipesRouter) {
+
     }
 }

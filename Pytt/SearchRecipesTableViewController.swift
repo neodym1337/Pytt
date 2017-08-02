@@ -30,7 +30,9 @@ class SearchRecipesTableViewController: UITableViewController, SearchRecipesView
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        //let cell = tableView.dequeueReusableCell(withIdentifier: , for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "test", for: indexPath)
+        
+        return cell
     }
     
     //MARK:  - SearchRecipesView
