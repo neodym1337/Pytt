@@ -6,6 +6,7 @@
 //  Copyright © 2017 Johan Hosk. All rights reserved.
 //
 
+// http://reza.codes/2017-07-29/how-to-train-your-own-dataset-for-coreml/
 
 
 import UIKit
@@ -16,11 +17,10 @@ protocol CaptureView: class {
 }
 
 protocol CapturePresenter {
-    
-//    var numberOfRecipes: Int { get }
+    //Things that have to be accessed outside of presenter
 }
 
-class CapturePresenterImplementation: CapturePresenter {
+class CapturePresenterImplementation: CapturePresenter, FrameExtractorUseCaseDelegate {
     fileprivate weak var view: CaptureView?
     fileprivate let frameExtractorUseCase:FrameExtractorUseCaseImplementation
     
@@ -30,7 +30,8 @@ class CapturePresenterImplementation: CapturePresenter {
     fileprivate var currentImage:UIImage? {
         didSet {
             guard let image = currentImage else { return }
-            
+            print(image)
+            //detect image here
         }
     }
     
@@ -43,9 +44,11 @@ class CapturePresenterImplementation: CapturePresenter {
     }
     
     func viewDidLoad() {
-        //reguster cell
         
     }
-
     
+    func captured(image: UIImage) {
+        currentImage = image
+    }
+
 }

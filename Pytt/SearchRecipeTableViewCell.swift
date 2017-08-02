@@ -7,24 +7,34 @@
 //
 
 import UIKit
+import Cosmos
+import SDWebImage
 
 protocol SearchRecipesTableViewCell {
     func display(title: String)
-    func display(imageUrl: String)
-    func display(rating:String)
+    func display(imageUrl: URL)
+    func display(rating:Double)
 }
 
-class SearchRecipeTableViewCellImplementation: UITableViewCell, SearchRecipesTableViewCell {
+class SearchRecipesTableViewCellImplementation: UITableViewCell, SearchRecipesTableViewCell {
+
+    @IBOutlet weak var foodImageView: UIImageView!
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var ratingView: CosmosView!
     
     func display(title: String) {
-        
+        titleLabel.text = title
     }
     
-    func display(rating: String) {
-        
+    func display(rating: Double) {
+        ratingView.rating = rating
     }
     
-    func display(imageUrl: String) {
-        
+    func display(imageUrl: URL) {
+        foodImageView.sd_setImage(with: imageUrl)
+    }
+    
+    static var defaultReuseIdentifier: String {
+        return "SearchRecipesTableViewCell"
     }
 }

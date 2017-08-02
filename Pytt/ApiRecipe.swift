@@ -11,7 +11,7 @@ import Foundation
 struct ApiRecipe: InitializableWithData, InitializableWithJson {
     var id: String
     var title: String
-    var rank: Float
+    var rank: Double
     var imageUrl:String
     var sourceUrl:String
     
@@ -27,7 +27,7 @@ struct ApiRecipe: InitializableWithData, InitializableWithJson {
     init(json: [String : Any]) throws {
         guard let id = json["recipe_id"] as? String,
             let title = json["title"] as? String,
-            let rank = json["social_rank"] as? Float,
+            let rank = json["social_rank"] as? Double,
             let imageUrl = json["image_url"] as? String,
             let sourceUrl = json["source_url"] as? String
         else {

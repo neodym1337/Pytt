@@ -17,11 +17,14 @@ protocol SearchRecipesPresenter {
     var numberOfRecipes: Int { get }
     var router: SearchRecipesRouter { get }
     func viewDidLoad()
-    func configure(cell: String, forRow row: Int) //TODO: Change to my cell subclass
+    func configure(cell: SearchRecipesTableViewCell, forRow row: Int) //TODO: Change to my cell subclass
     func didSelect(row: Int)
+    func searchRecipes(for ingredients: String)
 }
 
 class SearchRecipesPresenterImplementation: SearchRecipesPresenter {
+
+
     fileprivate weak var view: SearchRecipesView?
     fileprivate let displayRecipeSearchListUseCase:DisplayRecipeSearchListUseCase
     
@@ -42,13 +45,14 @@ class SearchRecipesPresenterImplementation: SearchRecipesPresenter {
     }
     
     func viewDidLoad() {
-        //reguster cell
-        
+        searchRecipes(for: "chicken") //TODO: Connect searchbar instead of hardcode
     }
     
-    func configure(cell: String, forRow row: Int) {
-        //let recipe = recipes[row]
-        
+    func configure(cell: SearchRecipesTableViewCell, forRow row: Int) {
+        let recipe = recipes[row]
+        cell.display(title: recipe.title)
+        cell.display(rating: recipe.rating)
+        cell.display(imageUrl: recipe.imageUrl)
     }
     
     func didSelect(row: Int) {
@@ -58,16 +62,28 @@ class SearchRecipesPresenterImplementation: SearchRecipesPresenter {
     }
     
     func searchRecipes(for ingredients: String) {
+        print("Search recipes")
         self.displayRecipeSearchListUseCase.displayRecipes(ingredients: ingredients) { [unowned self] (result) in
             switch result {
             case let .success(recipes):
-                self.recipes = recipes.map {
-                    return RecipeCellPresenter(title: $0.title, rating: $0.rank, imageUrlString: $0.imageUrl)
-                }
+                self.handleRecipesReceived(recipes: recipes)
             case let .failure(error):
-                print(error)
+                self.handleRecipesError(error: error)
             }
         }
+    }
+    
+    fileprivate func handleRecipesReceived(recipes: [Recipe]) {
+        print("Did recieve recipes")
+        self.recipes = recipes.map {
+            return RecipeCellPresenterImplementation(title: $0.title, rank: $0.rank, imageUrlString: $0.imageUrl)
+        }
+        
+        view?.refreshRecipesView()
+    }
+    
+    fileprivate func handleRecipesError(error:Error) {
+        view?.displayRecipesRetrievalError(title: "Error", message: error.localizedDescription)
     }
     
 }

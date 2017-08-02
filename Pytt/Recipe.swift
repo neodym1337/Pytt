@@ -11,7 +11,7 @@ import Foundation
 struct Recipe {
     var id: String
     var title: String
-    var rank: Float
+    var rank: Double
     var imageUrl:String
     var sourceUrl:String
 }

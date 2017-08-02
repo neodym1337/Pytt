@@ -13,7 +13,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="59" id="aSB-zX-Ecd" customClass="SearchRecipeTableViewImplementation">
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="SearchRecipesTableViewCell" rowHeight="59" id="aSB-zX-Ecd" customClass="SearchRecipeTableViewCellImplementation" customModule="Pytt" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="375" height="59"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="aSB-zX-Ecd" id="pp5-Rz-7es">
@@ -52,7 +52,13 @@
                     <constraint firstItem="XvD-YF-YHn" firstAttribute="leading" secondItem="pp5-Rz-7es" secondAttribute="leadingMargin" id="qUq-qS-f5o"/>
                 </constraints>
             </tableViewCellContentView>
-            <point key="canvasLocation" x="0.5" y="153.5"/>
+            <connections>
+                <outlet property="foodImageView" destination="XvD-YF-YHn" id="nRm-5h-aji"/>
+                <outlet property="imageView" destination="XvD-YF-YHn" id="Qqj-FG-Yt2"/>
+                <outlet property="ratingView" destination="uZM-Zh-2Ln" id="Wba-qb-dFq"/>
+                <outlet property="titleLabel" destination="IeR-Ag-G1H" id="wQA-1L-7Ej"/>
+            </connections>
+            <point key="canvasLocation" x="-311.5" y="72.5"/>
         </tableViewCell>
     </objects>
 </document>

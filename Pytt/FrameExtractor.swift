@@ -59,10 +59,12 @@ class FrameExtractorUseCaseImplementation: NSObject, AVCaptureVideoDataOutputSam
             self.captureSession.startRunning()
             self.videoPreviewView = VideoPreviewView(session: self.captureSession)
             
+            
             DispatchQueue.main.async {
                 self.videoPreviewView?.previewLayer.connection.videoOrientation = UIApplication.shared.statusBarOrientation.videoOrientation!
             }
-        }
+
+         }
     }
     
     func stopCapturing() {
@@ -128,7 +130,7 @@ class FrameExtractorUseCaseImplementation: NSObject, AVCaptureVideoDataOutputSam
         }
         captureSession.addOutput(videoOutput)
         
-        let layer:AVCaptureVideoPreviewLayer = AVCaptureVideoPreviewLayer(session: captureSession)
+        videoPreviewView = VideoPreviewView(session: captureSession)
     }
     
     private func selectCaptureDeviec() -> AVCaptureDevice? {

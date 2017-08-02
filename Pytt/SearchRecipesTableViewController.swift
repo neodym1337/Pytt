@@ -17,8 +17,12 @@ class SearchRecipesTableViewController: UITableViewController, SearchRecipesView
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.title = "Search recipes"
         configurator.configure(searchRecipesTableViewController: self)
         presenter.viewDidLoad()
+        
+        tableView.register(UINib(nibName: "SearchRecipeTableViewCell", bundle: nil), forCellReuseIdentifier: SearchRecipesTableViewCellImplementation.defaultReuseIdentifier)
+        tableView.tableFooterView = UIView(frame: CGRect.zero)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -30,15 +34,16 @@ class SearchRecipesTableViewController: UITableViewController, SearchRecipesView
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "test", for: indexPath)
-        
+        let cell = tableView.dequeueReusableCell(withIdentifier: SearchRecipesTableViewCellImplementation.defaultReuseIdentifier, for: indexPath) as! SearchRecipesTableViewCellImplementation
+        presenter.configure(cell: cell, forRow: indexPath.row)
         return cell
     }
     
     //MARK:  - SearchRecipesView
     
     func refreshRecipesView() {
-        
+        print("Did refresh table")
+        tableView.reloadData()
     }
     
     func displayRecipesRetrievalError(title: String, message: String) {

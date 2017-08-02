@@ -32,3 +32,7 @@ struct Color {
     }
     
 }
+
+struct Theme {
+    
+}

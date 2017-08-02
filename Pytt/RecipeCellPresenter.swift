@@ -8,16 +8,36 @@
 
 import Foundation
 
+let dummyImage = "https://static.pexels.com/photos/70497/pexels-photo-70497.jpeg"
 
-class RecipeCellPresenter {
+
+protocol RecipeCellPresenter {
+    var title:String { get }
+    var imageUrl:URL { get }
+    var rating:Double { get }
+}
+
+class RecipeCellPresenterImplementation: RecipeCellPresenter {
     
-    let title:String!
-    let rating:Float!
-    let imageUrlString:String!
+    var title: String
+    fileprivate let rank:Double!
+    fileprivate let imageUrlString:String!
     
-    init(title:String, rating:Float, imageUrlString:String) {
+    var imageUrl:URL {
+        get {
+            return URL(string: dummyImage)!
+        }
+    }
+    
+    var rating:Double {
+        get {
+            return Double(arc4random_uniform(5) + 1)
+        }
+    }
+    
+    init(title:String, rank:Double, imageUrlString:String) {
         self.title = title
-        self.rating = rating
+        self.rank = rank
         self.imageUrlString = imageUrlString
     }
 }
