@@ -6,6 +6,9 @@
 //  Copyright © 2017 Johan Hosk. All rights reserved.
 //
 
+// Network layer consists of the Request, the dispatcher (client), the task (gateway) and the response
+
+
 import Foundation
 
 typealias FetchRecipesEntityGatewayCompletionHandler = (_ recipes: Result<[Recipe]>) -> Void

@@ -15,7 +15,7 @@ protocol SearchRecipesRouter: ViewRouter {
 
 class SearchRecipesRouterImplementation: SearchRecipesRouter {
     fileprivate weak var searchRecipesTableViewController: SearchRecipesTableViewController?
-    fileprivate var recipe:Recipe!
+    fileprivate var recipe: Recipe!
     
     init(searchRecipesTableViewController: SearchRecipesTableViewController) {
         self.searchRecipesTableViewController = searchRecipesTableViewController
@@ -31,12 +31,7 @@ class SearchRecipesRouterImplementation: SearchRecipesRouter {
     }
     
     func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        if let bookDetailsTableViewController = segue.destination as? BookDetailsTableViewController {
-//            bookDetailsTableViewController.configurator = BookDetailsConfiguratorImplementation(book: book)
-//        } else if let navigationController = segue.destination as? UINavigationController,
-//            let addBookViewController = navigationController.topViewController as? AddBookViewController {
-//            addBookViewController.configurator = AddBookConfiguratorImplementation(addBookPresenterDelegate: addBookPresenterDelegate)
-//        }
+
     }
     
 }

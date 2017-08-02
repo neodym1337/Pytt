@@ -20,13 +20,14 @@ protocol SearchRecipesPresenter {
     func configure(cell: SearchRecipesTableViewCell, forRow row: Int) //TODO: Change to my cell subclass
     func didSelect(row: Int)
     func searchRecipes(for ingredients: String)
+    func height(forRow row: Int) -> CGFloat
 }
 
 class SearchRecipesPresenterImplementation: SearchRecipesPresenter {
 
 
     fileprivate weak var view: SearchRecipesView?
-    fileprivate let recipeListUseCase:RecipeListUseCase
+    fileprivate let recipeListUseCase: RecipeListUseCase
     
     internal let router: SearchRecipesRouter
     
@@ -53,12 +54,15 @@ class SearchRecipesPresenterImplementation: SearchRecipesPresenter {
         cell.display(title: recipe.title)
         cell.display(rating: recipe.rating)
         cell.display(imageUrl: recipe.imageUrl)
+        
+    }
+    
+    func height(forRow row: Int) -> CGFloat {
+        return 100
     }
     
     func didSelect(row: Int) {
-        //TODO: Finish implementationa
-        //let recipe = recipes[row]
-        //router.presentDetailsView(for: recipe)
+
     }
     
     func searchRecipes(for ingredients: String) {
@@ -78,16 +82,11 @@ class SearchRecipesPresenterImplementation: SearchRecipesPresenter {
         self.recipes = recipes.map {
             return RecipeCellPresenterImplementation(title: $0.title, rank: $0.rank, imageUrlString: $0.imageUrl)
         }
-        
         view?.refreshRecipesView()
     }
     
-    fileprivate func handleRecipesError(error:Error) {
+    fileprivate func handleRecipesError(error: Error) {
         view?.displayRecipesRetrievalError(title: "Error", message: error.localizedDescription)
     }
     
 }
-
-
-
-

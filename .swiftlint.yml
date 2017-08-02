@@ -9,5 +9,6 @@ disabled_rules: # rule identifiers to exclude from running
   - todo
   - variable_name
   - vertical_whitespace
+  - force_cast
 
  

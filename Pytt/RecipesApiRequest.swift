@@ -16,12 +16,15 @@ import Foundation
 //Ex search url http://food2fork.com/api/search?key={API_KEY}&q=shredded%20chicken
 
 let apiKey = "055a3a352bf62b2fefbc53056a93828b"
-let baseUrl = "http://food2fork.com/api/"
+let baseUrl = "https://food2fork.com/api/"
 let searchApi = "search?"
 
 
 
 //http://iyadagha.com/using-mvp-ios-swift/
+
+// Network layer consists of the Request, the dispatcher (client), the task (gateway) and the response
+
 
 struct RecipesApiRequest: ApiRequest {
     

@@ -25,6 +25,9 @@ class SearchRecipesTableViewController: UITableViewController, SearchRecipesView
         tableView.register(UINib(nibName: "SearchRecipeTableViewCell", bundle: nil),
                            forCellReuseIdentifier: SearchRecipesTableViewCellImplementation.defaultReuseIdentifier)
         tableView.tableFooterView = UIView(frame: CGRect.zero)
+        tableView.separatorStyle = .none
+        view.backgroundColor = Color.lightBackground
+        tableView.backgroundColor = Color.lightBackground
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -42,6 +45,10 @@ class SearchRecipesTableViewController: UITableViewController, SearchRecipesView
             as? SearchRecipesTableViewCellImplementation else { return UITableViewCell() }
         presenter.configure(cell: cell, forRow: indexPath.row)
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return presenter.height(forRow: indexPath.row)
     }
     
     // MARK: - SearchRecipesView

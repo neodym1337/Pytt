@@ -7,43 +7,26 @@
 //
 
 import Foundation
+import SwiftyJSON
 
-struct ApiRecipe: InitializableWithData, InitializableWithJson {
+struct ApiRecipe {
     var id: String
     var title: String
     var rank: Double
     var imageUrl: String
     var sourceUrl: String
     
-    init(data: Data?) throws {
-        guard let data = data,
-            let jsonObject = try? JSONSerialization.jsonObject(with: data),
-            let json = jsonObject as? [String: Any] else {
-            throw NSError.createPraseError()
-        }
-        try self.init(json: json)
-    }
-    
-    init(json: [String : Any]) throws {
-        guard let id = json["recipe_id"] as? String,
-            let title = json["title"] as? String,
-            let rank = json["social_rank"] as? Double,
-            let imageUrl = json["image_url"] as? String,
-            let sourceUrl = json["source_url"] as? String
-        else {
-                throw NSError.createPraseError()
-        }
-        
-        self.id = id
-        self.title = title
-        self.rank = rank
-        self.imageUrl = imageUrl
-        self.sourceUrl = sourceUrl
+    init(json: JSON) {
+        self.id = json["recipe_id"].stringValue
+        self.title = json["title"].stringValue
+        self.rank = json["social_rank"].doubleValue
+        self.imageUrl = json["image_url"].stringValue
+        self.sourceUrl = json["source_url"].stringValue
     }
 }
 
 extension ApiRecipe {
-    var book: Recipe {
+    var recipe: Recipe {
         return Recipe(id: id,
                       title: title,
                       rank: rank,

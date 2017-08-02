@@ -13,7 +13,7 @@ import SDWebImage
 protocol SearchRecipesTableViewCell {
     func display(title: String)
     func display(imageUrl: URL)
-    func display(rating:Double)
+    func display(rating: Double)
 }
 
 class SearchRecipesTableViewCellImplementation: UITableViewCell, SearchRecipesTableViewCell {
@@ -21,6 +21,32 @@ class SearchRecipesTableViewCellImplementation: UITableViewCell, SearchRecipesTa
     @IBOutlet weak var foodImageView: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var ratingView: CosmosView!
+    
+    override func awakeFromNib() {
+        setStyle()
+    }
+    
+    fileprivate func setStyle() {
+        selectionStyle = UITableViewCellSelectionStyle.none
+        ratingView.settings.updateOnTouch = false
+        foodImageView.contentMode = .scaleAspectFill
+        foodImageView.layer.cornerRadius = foodImageView.frame.size.width * 0.5
+        foodImageView.clipsToBounds = true
+        foodImageView.layer.borderWidth = 2.0
+        foodImageView.layer.borderColor = Color.darkBackground.cgColor
+        
+        backgroundColor = Color.lightBackground
+        contentView.layer.borderColor = Color.border.cgColor
+        
+        titleLabel.backgroundColor = UIColor.clear
+        titleLabel.textColor = Color.darkText
+        
+        ratingView.backgroundColor = Color.lightBackground
+        ratingView.settings.emptyBorderColor = Color.affirmation
+        ratingView.settings.emptyColor = UIColor.clear
+        ratingView.settings.filledBorderColor = Color.affirmation
+        ratingView.settings.filledColor = Color.affirmation
+    }
     
     func display(title: String) {
         titleLabel.text = title

@@ -14,8 +14,7 @@ protocol ApiRequest {
 }
 
 protocol ApiClient {
-    func execute<T: InitializableWithData>(request: ApiRequest,
-                                           completionHandler: @escaping (_ result: Result <ApiResponse<T>>) -> Void)
+    func execute(request: ApiRequest, completionHandler: @escaping (_ result: Result<ApiResponse>) -> Void)
 }
 
 protocol URLSessionProtocol {
@@ -35,8 +34,10 @@ class ApiClientImplementation: ApiClient {
     
     // MARK: - ApiClient
     
-    func execute<T: InitializableWithData>(request: ApiRequest,
-                                           completionHandler: @escaping (Result<ApiResponse<T>>) -> Void) {
+    func execute(request: ApiRequest,
+                 completionHandler: @escaping (Result<ApiResponse>) -> Void) {
+        
+        print("Request with url: " + request.urlRequest.url!.absoluteString)
         let dataTask = urlSession.dataTask(with: request.urlRequest) { (data, response, error) in
             // No response
             guard let httpUrlResponse = response as? HTTPURLResponse else {
@@ -47,7 +48,7 @@ class ApiClientImplementation: ApiClient {
             let successRange = 200...299
             if successRange.contains(httpUrlResponse.statusCode) { //Got response
                 do {
-                    let response = try ApiResponse<T>(data:data, httpUrlResponse: httpUrlResponse)
+                    let response = try ApiResponse(data:data!, httpUrlResponse: httpUrlResponse)
                     //Could get response
                     completionHandler(Result.success(response))
                 } catch {

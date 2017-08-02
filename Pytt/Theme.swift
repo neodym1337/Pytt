@@ -27,12 +27,20 @@ struct Color {
     static let lightText = UIColor(hexString: "#F0B67F")
     static let affirmation = UIColor(hexString: "#4FCEAD") // Colour to show success, something right for user.
     
-    func custom(hexString:String, _ opacity:Float) -> UIColor {
+    func custom(hexString: String, _ opacity:Float) -> UIColor {
         return UIColor(hexString: hexString).withAlphaComponent(CGFloat(opacity))
     }
     
 }
 
 struct Theme {
+    
+    static func apply() {
+        UISearchBar.appearance().tintColor = Color.lightBackground
+        UINavigationBar.appearance().tintColor = Color.lightBackground
+        UINavigationBar.appearance().barTintColor = Color.lightBackground
+    }
+    
+    
     
 }

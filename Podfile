@@ -7,6 +7,7 @@ target 'Pytt' do
   pod 'SDWebImage'
   pod 'Cosmos'
   pod 'SwiftLint'
+  pod 'SwiftyJSON'
 
   # Pods for Pytt
 
