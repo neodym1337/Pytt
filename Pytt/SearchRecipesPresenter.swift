@@ -26,7 +26,7 @@ class SearchRecipesPresenterImplementation: SearchRecipesPresenter {
 
 
     fileprivate weak var view: SearchRecipesView?
-    fileprivate let displayRecipeSearchListUseCase:DisplayRecipeSearchListUseCase
+    fileprivate let recipeListUseCase:RecipeListUseCase
     
     internal let router: SearchRecipesRouter
     
@@ -37,10 +37,10 @@ class SearchRecipesPresenterImplementation: SearchRecipesPresenter {
     }
     
     init(view: SearchRecipesView,
-         displayRecipeSearchListUseCase: DisplayRecipeSearchListUseCase,
+         recipeListUseCase: RecipeListUseCase,
          router: SearchRecipesRouter) {
         self.view = view
-        self.displayRecipeSearchListUseCase = displayRecipeSearchListUseCase
+        self.recipeListUseCase = recipeListUseCase
         self.router = router
     }
     
@@ -48,11 +48,11 @@ class SearchRecipesPresenterImplementation: SearchRecipesPresenter {
         searchRecipes(for: "chicken") //TODO: Connect searchbar instead of hardcode
     }
     
-    func configure(cell: SearchRecipesTableViewCell?, forRow row: Int) {
+    func configure(cell: SearchRecipesTableViewCell, forRow row: Int) {
         let recipe = recipes[row]
-        cell?.display(title: recipe.title)
-        cell?.display(rating: recipe.rating)
-        cell?.display(imageUrl: recipe.imageUrl)
+        cell.display(title: recipe.title)
+        cell.display(rating: recipe.rating)
+        cell.display(imageUrl: recipe.imageUrl)
     }
     
     func didSelect(row: Int) {
@@ -63,7 +63,7 @@ class SearchRecipesPresenterImplementation: SearchRecipesPresenter {
     
     func searchRecipes(for ingredients: String) {
         print("Search recipes")
-        self.displayRecipeSearchListUseCase.displayRecipes(ingredients: ingredients) { [unowned self] (result) in
+        self.recipeListUseCase.displayRecipes(ingredients: ingredients) { [unowned self] (result) in
             switch result {
             case let .success(recipes):
                 self.handleRecipesReceived(recipes: recipes)

@@ -12,8 +12,8 @@ struct ApiRecipe: InitializableWithData, InitializableWithJson {
     var id: String
     var title: String
     var rank: Double
-    var imageUrl:String
-    var sourceUrl:String
+    var imageUrl: String
+    var sourceUrl: String
     
     init(data: Data?) throws {
         guard let data = data,

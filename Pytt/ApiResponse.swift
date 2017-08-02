@@ -43,7 +43,7 @@ struct ApiParseError: Error {
 
 struct ApiResponse<T: InitializableWithData> {
     let entity: T
-    let httpUrlResponse:HTTPURLResponse
+    let httpUrlResponse: HTTPURLResponse
     let data: Data?
     
     init(data: Data?, httpUrlResponse: HTTPURLResponse) throws {
@@ -75,7 +75,7 @@ extension Array: InitializableWithData {
             throw NSError.createPraseError()
         }
         
-        self = try jsonArray.map( { return try element.init(json: $0) as! Element } )
+        self = try jsonArray.map({ return try element.init(json: $0) as! Element })
     }
 }
 
@@ -86,22 +86,3 @@ extension NSError {
                        userInfo: [NSLocalizedDescriptionKey: "A parsing error occured"])
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

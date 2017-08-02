@@ -14,11 +14,13 @@ protocol ApiRequest {
 }
 
 protocol ApiClient {
-    func execute<T: InitializableWithData>(request: ApiRequest, completionHandler: @escaping (_ result: Result <ApiResponse<T>>) -> Void)
+    func execute<T: InitializableWithData>(request: ApiRequest,
+                                           completionHandler: @escaping (_ result: Result <ApiResponse<T>>) -> Void)
 }
 
 protocol URLSessionProtocol {
-    func dataTask(with request: URLRequest, completionHandler: @escaping (Data?, URLResponse?, Error?) -> Void) -> URLSessionDataTask
+    func dataTask(with request: URLRequest, completionHandler: @escaping (Data?, URLResponse?, Error?) -> Void)
+        -> URLSessionDataTask
 }
 
 extension URLSession: URLSessionProtocol {}
@@ -27,12 +29,14 @@ class ApiClientImplementation: ApiClient {
     let urlSession: URLSessionProtocol
     
     init(urlSessionConfiguration: URLSessionConfiguration, completionHandlerQueue: OperationQueue) {
-        urlSession = URLSession(configuration: urlSessionConfiguration, delegate: nil, delegateQueue: completionHandlerQueue)
+        urlSession = URLSession(configuration: urlSessionConfiguration, delegate: nil,
+                                delegateQueue: completionHandlerQueue)
     }
     
-    //MARK: - ApiClient
+    // MARK: - ApiClient
     
-    func execute<T: InitializableWithData>(request: ApiRequest, completionHandler: @escaping (Result<ApiResponse<T>>) -> Void) {
+    func execute<T: InitializableWithData>(request: ApiRequest,
+                                           completionHandler: @escaping (Result<ApiResponse<T>>) -> Void) {
         let dataTask = urlSession.dataTask(with: request.urlRequest) { (data, response, error) in
             // No response
             guard let httpUrlResponse = response as? HTTPURLResponse else {
@@ -49,7 +53,7 @@ class ApiClientImplementation: ApiClient {
                 } catch {
                     completionHandler(Result.failure(error))
                 }
-            }else {
+            } else {
                 completionHandler(Result.failure(ApiError(data: data, httpUrlResponse: httpUrlResponse)))
             }
         }

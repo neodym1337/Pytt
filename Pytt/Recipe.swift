@@ -12,8 +12,8 @@ struct Recipe {
     var id: String
     var title: String
     var rank: Double
-    var imageUrl:String
-    var sourceUrl:String
+    var imageUrl: String
+    var sourceUrl: String
 }
 
 

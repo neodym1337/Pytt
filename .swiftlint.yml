@@ -6,6 +6,8 @@ excluded: # paths to ignore during linting. Takes precedence over `included`.
   #Rules
 disabled_rules: # rule identifiers to exclude from running
   - trailing_whitespace
-
+  - todo
+  - variable_name
+  - vertical_whitespace
 
  

@@ -22,7 +22,8 @@ class SearchRecipesTableViewController: UITableViewController, SearchRecipesView
         configurator.configure(searchRecipesTableViewController: self)
         presenter.viewDidLoad()
         
-        tableView.register(UINib(nibName: "SearchRecipeTableViewCell", bundle: nil), forCellReuseIdentifier: SearchRecipesTableViewCellImplementation.defaultReuseIdentifier)
+        tableView.register(UINib(nibName: "SearchRecipeTableViewCell", bundle: nil),
+                           forCellReuseIdentifier: SearchRecipesTableViewCellImplementation.defaultReuseIdentifier)
         tableView.tableFooterView = UIView(frame: CGRect.zero)
     }
     
@@ -35,12 +36,15 @@ class SearchRecipesTableViewController: UITableViewController, SearchRecipesView
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: SearchRecipesTableViewCellImplementation.defaultReuseIdentifier, for: indexPath) as! SearchRecipesTableViewCellImplementation
+        
+        guard let cell = tableView.dequeueReusableCell(withIdentifier:
+            SearchRecipesTableViewCellImplementation.defaultReuseIdentifier, for: indexPath)
+            as? SearchRecipesTableViewCellImplementation else { return UITableViewCell() }
         presenter.configure(cell: cell, forRow: indexPath.row)
         return cell
     }
     
-    //MARK:  - SearchRecipesView
+    // MARK: - SearchRecipesView
     
     func refreshRecipesView() {
         print("Did refresh table")
@@ -50,7 +54,4 @@ class SearchRecipesTableViewController: UITableViewController, SearchRecipesView
     func displayRecipesRetrievalError(title: String, message: String) {
         
     }
-    
 }
-
-

@@ -20,10 +20,10 @@ class SearchRecipesConfiguratorImplementation: SearchRecipesConfigurator {
         
         //Connect realm stuff here
         
-        let displaySearchRecipesUseCase = DisplayRecipeSearchListUseCaseImplementation(recipesGateway: apiRecipesGateway)
+        let recipeListUseCase = RecipeListUseCaseImplementation(recipesGateway: apiRecipesGateway)
         let router = SearchRecipesRouterImplementation(searchRecipesTableViewController: searchRecipesTableViewController)
         
-        let presenter = SearchRecipesPresenterImplementation(view: searchRecipesTableViewController, displayRecipeSearchListUseCase: displaySearchRecipesUseCase, router: router)
+        let presenter = SearchRecipesPresenterImplementation(view: searchRecipesTableViewController, recipeListUseCase: recipeListUseCase, router: router)
         searchRecipesTableViewController.presenter = presenter
         
         

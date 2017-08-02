@@ -30,7 +30,7 @@ import Foundation
 /**
 Extension on `Dictionary` that adds different helper methods such as JSON `Data` serialization
 */
-public extension Dictionary where Key: ExpressibleByStringLiteral, Value: Any  {
+public extension Dictionary where Key: ExpressibleByStringLiteral, Value: Any {
 	
 	/**
 	Heper method that serializes the `Dictionary` to JSON `Data`

@@ -8,13 +8,13 @@
 
 import Foundation
 
-typealias DisplayRecipeSearchListCompletionHandler = (_ recipes: Result<[Recipe]>) -> Void
+typealias RecipeListCompletionHandler = (_ recipes: Result<[Recipe]>) -> Void
 
-protocol DisplayRecipeSearchListUseCase {
-    func displayRecipes(ingredients: String, completionHandler: @escaping DisplayRecipeSearchListCompletionHandler)
+protocol RecipeListUseCase {
+    func displayRecipes(ingredients: String, completionHandler: @escaping RecipeListCompletionHandler)
 }
 
-class DisplayRecipeSearchListUseCaseImplementation: DisplayRecipeSearchListUseCase {
+class RecipeListUseCaseImplementation: RecipeListUseCase {
     let recipesGateway: RecipesGateway
     
     init(recipesGateway: RecipesGateway) {
@@ -22,9 +22,9 @@ class DisplayRecipeSearchListUseCaseImplementation: DisplayRecipeSearchListUseCa
     }
     
     
-    //MARK: - DisplayRecipeSearchListUseCase
+    // MARK: - DisplayRecipeSearchListUseCase
     
-    func displayRecipes(ingredients: String, completionHandler: @escaping DisplayRecipeSearchListCompletionHandler) {
+    func displayRecipes(ingredients: String, completionHandler: @escaping RecipeListCompletionHandler) {
         self.recipesGateway.fetchRecipes(ingredients: ingredients) { (result) in
             completionHandler(result)
         }

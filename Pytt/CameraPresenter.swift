@@ -12,8 +12,8 @@
 import UIKit
 
 protocol CaptureView: class {
-    func identifiedObject(object:String)
-    func failedToIdentifyObject(message:String)
+    func identifiedObject(object: String)
+    func failedToIdentifyObject(message: String)
 }
 
 protocol CapturePresenter {
@@ -22,12 +22,12 @@ protocol CapturePresenter {
 
 class CapturePresenterImplementation: CapturePresenter, FrameExtractorUseCaseDelegate {
     fileprivate weak var view: CaptureView?
-    fileprivate let frameExtractorUseCase:FrameExtractorUseCaseImplementation
+    fileprivate let frameExtractorUseCase: FrameExtractorUseCaseImplementation
     
     
-    internal let router:CaptureRouter
+    internal let router: CaptureRouter
     
-    fileprivate var currentImage:UIImage? {
+    fileprivate var currentImage: UIImage? {
         didSet {
             guard let image = currentImage else { return }
             print(image)
@@ -35,7 +35,7 @@ class CapturePresenterImplementation: CapturePresenter, FrameExtractorUseCaseDel
         }
     }
     
-    init(view:CaptureView,
+    init(view: CaptureView,
          frameExtractorUseCase: FrameExtractorUseCaseImplementation,
          router: CaptureRouter) {
         self.view = view

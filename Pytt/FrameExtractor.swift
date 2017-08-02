@@ -26,10 +26,12 @@ protocol FrameExtractorUseCase {
     init()
     func startCapturing()
     func stopCapturing()
-    var videoPreviewView:VideoPreviewView? { get }
+    var videoPreviewView: VideoPreviewView? { get }
 }
 
-class FrameExtractorUseCaseImplementation: NSObject, AVCaptureVideoDataOutputSampleBufferDelegate, FrameExtractorUseCase {
+class FrameExtractorUseCaseImplementation: NSObject,
+                                           AVCaptureVideoDataOutputSampleBufferDelegate,
+                                           FrameExtractorUseCase {
     
     fileprivate let captureSession = AVCaptureSession()
     fileprivate let context = CIContext()
@@ -41,7 +43,7 @@ class FrameExtractorUseCaseImplementation: NSObject, AVCaptureVideoDataOutputSam
     fileprivate let position = AVCaptureDevicePosition.back
     fileprivate let quality = AVCaptureSessionPresetMedium
     
-    public weak var delegate:FrameExtractorUseCaseDelegate?
+    public weak var delegate: FrameExtractorUseCaseDelegate?
     
     var videoPreviewView: VideoPreviewView?
     
@@ -50,7 +52,7 @@ class FrameExtractorUseCaseImplementation: NSObject, AVCaptureVideoDataOutputSam
         startCapturing()
     }
     
-    //MARK: - FrameExtractorUseCase
+    // MARK: - FrameExtractorUseCase
     
     func startCapturing() {
         self.checkPermission()
@@ -61,7 +63,8 @@ class FrameExtractorUseCaseImplementation: NSObject, AVCaptureVideoDataOutputSam
             
             
             DispatchQueue.main.async {
-                self.videoPreviewView?.previewLayer.connection.videoOrientation = UIApplication.shared.statusBarOrientation.videoOrientation!
+                self.videoPreviewView?.previewLayer.connection.videoOrientation =
+                    UIApplication.shared.statusBarOrientation.videoOrientation!
             }
 
          }
@@ -69,14 +72,14 @@ class FrameExtractorUseCaseImplementation: NSObject, AVCaptureVideoDataOutputSam
     
     func stopCapturing() {
         sessionQueue.async { [unowned self] in
-            if (self.captureSession.isRunning) {
+            if self.captureSession.isRunning {
                 self.captureSession.stopRunning()
                 self.videoPreviewView = nil
             }
         }
     }
     
-    //MARK: - Implementation
+    // MARK: - Implementation
     
     private func checkPermission() {
         switch AVCaptureDevice.authorizationStatus(forMediaType: AVMediaTypeVideo) {
@@ -97,7 +100,7 @@ class FrameExtractorUseCaseImplementation: NSObject, AVCaptureVideoDataOutputSam
     private func requestPermission() {
         sessionQueue.suspend()
         AVCaptureDevice.requestAccess(forMediaType: mediaType, completionHandler: { [unowned self] (granted) in
-            self.permissionGranted = true
+            self.permissionGranted = granted
             self.sessionQueue.resume()
         })
     }
@@ -134,12 +137,16 @@ class FrameExtractorUseCaseImplementation: NSObject, AVCaptureVideoDataOutputSam
     }
     
     private func selectCaptureDeviec() -> AVCaptureDevice? {
-        return AVCaptureDeviceDiscoverySession(deviceTypes: [deviceTypeBackCamera], mediaType: mediaType, position:position).devices.first
+        return AVCaptureDeviceDiscoverySession(deviceTypes: [deviceTypeBackCamera],
+                                               mediaType: mediaType,
+                                               position:position).devices.first
     }
     
-    //MARK: - AVCaptureVideoDataOutputSampleBufferDelegate
+    // MARK: - AVCaptureVideoDataOutputSampleBufferDelegate
     
-    func captureOutput(_ captureOutput: AVCaptureOutput!, didOutputSampleBuffer sampleBuffer: CMSampleBuffer!, from connection: AVCaptureConnection!) {
+    func captureOutput(_ captureOutput: AVCaptureOutput!,
+                       didOutputSampleBuffer sampleBuffer: CMSampleBuffer!,
+                       from connection: AVCaptureConnection!) {
         print("Got a frame")
         guard let uiImage = imageFromSampleBuffer(sampleBuffer: sampleBuffer) else { return }
         DispatchQueue.main.async { [unowned self] in
@@ -147,12 +154,14 @@ class FrameExtractorUseCaseImplementation: NSObject, AVCaptureVideoDataOutputSam
         }
     }
     
-    func captureOutput(_ captureOutput: AVCaptureOutput!, didDrop sampleBuffer: CMSampleBuffer!, from connection: AVCaptureConnection!) {
+    func captureOutput(_ captureOutput: AVCaptureOutput!,
+                       didDrop sampleBuffer: CMSampleBuffer!,
+                       from connection: AVCaptureConnection!) {
 
         print("Dropped a frame")
     }
     
-    //MARK: - Image processing
+    // MARK: - Image processing
     
     private func imageFromSampleBuffer(sampleBuffer: CMSampleBuffer) -> UIImage? {
         guard let imageBuffer = CMSampleBufferGetImageBuffer(sampleBuffer) else { return nil }
