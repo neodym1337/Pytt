@@ -25,7 +25,6 @@ protocol SearchRecipesPresenter {
 
 class SearchRecipesPresenterImplementation: SearchRecipesPresenter {
 
-
     fileprivate weak var view: SearchRecipesView?
     fileprivate let recipeListUseCase: RecipeListUseCase
     
@@ -62,7 +61,8 @@ class SearchRecipesPresenterImplementation: SearchRecipesPresenter {
     }
     
     func didSelect(row: Int) {
-
+        let recipe = recipes[row]
+        router.presentDetailsView(for: recipe.recipe)
     }
     
     func searchRecipes(for ingredients: String) {
@@ -80,7 +80,7 @@ class SearchRecipesPresenterImplementation: SearchRecipesPresenter {
     fileprivate func handleRecipesReceived(recipes: [Recipe]) {
         print("Did recieve recipes")
         self.recipes = recipes.map {
-            return RecipeCellPresenterImplementation(title: $0.title, rank: $0.rank, imageUrlString: $0.imageUrl)
+            return RecipeCellPresenterImplementation(recipe: $0)
         }
         view?.refreshRecipesView()
     }

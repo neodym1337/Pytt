@@ -8,12 +8,14 @@ target 'Pytt' do
   pod 'Cosmos'
   pod 'SwiftLint'
   pod 'SwiftyJSON'
-
-  # Pods for Pytt
+  pod 'SwiftWebVC'
+  pod 'Mockingjay'
 
   target 'PyttTests' do
     inherit! :search_paths
     # Pods for testing
+    pod 'Quick'
+    pod 'Nimble'
   end
 
   target 'PyttUITests' do

@@ -29,11 +29,5 @@ class SearchRecipesConfiguratorImplementation: SearchRecipesConfigurator {
                                                              recipeListUseCase: recipeListUseCase,
                                                              router: router)
         searchRecipesTableViewController.presenter = presenter
-        
-        
-//        init(view:SearchRecipesView,
-//        displayRecipeSearchListUseCase: DisplayRecipeSearchListUseCase,
-//        router: SearchRecipesRouter) {
-
     }
 }

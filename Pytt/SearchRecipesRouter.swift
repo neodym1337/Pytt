@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SwiftWebVC
 
 protocol SearchRecipesRouter: ViewRouter {
     func presentDetailsView(for recipe: Recipe)
@@ -23,7 +24,8 @@ class SearchRecipesRouterImplementation: SearchRecipesRouter {
     
     func presentDetailsView(for recipe: Recipe) {
         self.recipe = recipe
-        //Perform segue for detail view
+        let webVC = SwiftWebVC(urlString: recipe.sourceUrl)
+        searchRecipesTableViewController?.navigationController?.pushViewController(webVC, animated: true)
     }
     
     func presentScanFoodView() {
@@ -33,5 +35,4 @@ class SearchRecipesRouterImplementation: SearchRecipesRouter {
     func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 
     }
-    
 }

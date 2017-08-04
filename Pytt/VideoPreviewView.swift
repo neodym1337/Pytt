@@ -11,7 +11,7 @@ import AVFoundation
 
 class VideoPreviewView: UIView {
     
-    var previewLayer:AVCaptureVideoPreviewLayer!
+    var previewLayer: AVCaptureVideoPreviewLayer!
     
     convenience init(session: AVCaptureSession) {
         self.init(frame: CGRect.zero)

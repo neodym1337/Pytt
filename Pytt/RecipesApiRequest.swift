@@ -15,16 +15,18 @@ import Foundation
 
 //Ex search url http://food2fork.com/api/search?key={API_KEY}&q=shredded%20chicken
 
-let apiKey = "055a3a352bf62b2fefbc53056a93828b"
-let baseUrl = "https://food2fork.com/api/"
-let searchApi = "search?"
-
-
-
 //http://iyadagha.com/using-mvp-ios-swift/
 
 // Network layer consists of the Request, the dispatcher (client), the task (gateway) and the response
 
+//Inspired by testable network layer
+//https://medium.com/ios-os-x-development/isolating-tasks-in-swift-or-how-to-create-a-testable-networking-layer-d0380e69f7e3
+
+let apiKey = "055a3a352bf62b2fefbc53056a93828b"
+let https = "https://"
+let baseUrl = "food2fork.com"
+let apiUrl = "/api/"
+let searchApi = "search?"
 
 struct RecipesApiRequest: ApiRequest {
     
@@ -34,7 +36,7 @@ struct RecipesApiRequest: ApiRequest {
     init(ingredients: String) {
         self.ingredients = ingredients
         let escapedIngredients = ingredients.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed)!
-        let urlString = baseUrl + searchApi + "key=" + apiKey + "&q=" + escapedIngredients
+        let urlString = https + baseUrl + apiUrl + searchApi + "key=" + apiKey + "&q=" + escapedIngredients
         let url = URL(string: urlString)!
         self.urlRequest = URLRequest(url: url)
         self.urlRequest.httpMethod = "GET"

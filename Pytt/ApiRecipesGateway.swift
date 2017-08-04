@@ -29,11 +29,11 @@ class ApiRecipesGatewayImplementation: ApiRecipesGateway {
         
         let request = RecipesApiRequest(ingredients: ingredients)
     
-        apiClient.execute(request: request) { (result: Result<ApiResponse>) in
+        apiClient.execute(request: request) { [unowned self] (result: Result<ApiResponse>) in
             switch result {
             case let .success(response):
                 print("Got response")
-                let recipes = response.json["recipes"].arrayValue.map { return ApiRecipe(json: $0).recipe }
+                let recipes = self.handleResponse(response: response)
                 completionHandler(.success(recipes))
                 break
             case let .failure(error):
@@ -42,7 +42,9 @@ class ApiRecipesGatewayImplementation: ApiRecipesGateway {
                 break
             }
         }
-        
-        
+    }
+    
+    func handleResponse(response: ApiResponse) -> [Recipe] {
+        return response.json["recipes"].arrayValue.map { return ApiRecipe(json: $0).recipe }
     }
 }

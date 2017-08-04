@@ -57,40 +57,6 @@ struct ApiResponse {
     }
 }
 
-//struct VoidResponse: InitializableWithData {
-//    init(data: Data?) throws {
-//        
-//    }
-//}
-
-//extension Array: InitializableWithData {
-//    
-//    init(data: Data?) throws {
-//        guard data != nil else {
-//            throw NSError.parseError()
-//        }
-//        
-//    }
-//
-//    
-//    
-//    init(data: Data?) throws {
-//        guard let data = data,
-//            let jsonObject = try? JSONSerialization.jsonObject(with: data),
-//            let jsonArray = jsonObject as? [[String: Any]] else {
-//                throw NSError.createPraseError()
-//        }
-//        
-//        guard let element = Element.self as? InitializableWithJson.Type else {
-//            throw NSError.createPraseError()
-//        }
-//        
-//        //self = try jsonArray.map({ return try element.init(json: $0) as! Element })
-//
-//        self = try jsonArray.map({ return try element.init(json: $0) as! Element })
-//    }
-//}
-
 extension NSError {
     static func parseError() -> NSError {
         return NSError(domain: "com.johan.pytt",
@@ -98,22 +64,5 @@ extension NSError {
                        userInfo: [NSLocalizedDescriptionKey: "A parsing error occured"])
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 

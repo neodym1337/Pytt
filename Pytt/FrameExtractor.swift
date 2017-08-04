@@ -105,7 +105,7 @@ class FrameExtractorUseCaseImplementation: NSObject,
         })
     }
     
-      private func configureSession() {
+    private func configureSession() {
         guard permissionGranted else {
             print("Could not configure session, no permission")
             return
@@ -157,8 +157,6 @@ class FrameExtractorUseCaseImplementation: NSObject,
     func captureOutput(_ captureOutput: AVCaptureOutput!,
                        didDrop sampleBuffer: CMSampleBuffer!,
                        from connection: AVCaptureConnection!) {
-
-        print("Dropped a frame")
     }
     
     // MARK: - Image processing

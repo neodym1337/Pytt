@@ -12,6 +12,7 @@ let dummyImage = "https://static.pexels.com/photos/70497/pexels-photo-70497.jpeg
 
 
 protocol RecipeCellPresenter {
+    var recipe: Recipe { get }
     var title: String { get }
     var imageUrl: URL { get }
     var rating: Double { get }
@@ -19,7 +20,8 @@ protocol RecipeCellPresenter {
 
 class RecipeCellPresenterImplementation: RecipeCellPresenter {
     
-    var title: String
+    var recipe: Recipe
+    let title: String
     fileprivate let rank: Double!
     fileprivate let imageUrlString: String!
     
@@ -31,9 +33,10 @@ class RecipeCellPresenterImplementation: RecipeCellPresenter {
         return Double(arc4random_uniform(5) + 1)
     }
     
-    init(title: String, rank: Double, imageUrlString: String) {
-        self.title = title
-        self.rank = rank
-        self.imageUrlString = imageUrlString
+    init(recipe: Recipe) {
+        self.recipe = recipe
+        self.title = recipe.title
+        self.rank = recipe.rank
+        self.imageUrlString = recipe.imageUrl
     }
 }

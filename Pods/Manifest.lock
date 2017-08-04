@@ -1,23 +1,43 @@
 PODS:
   - Cosmos (8.0.2)
+  - Mockingjay (2.0.0):
+    - Mockingjay/Core (= 2.0.0)
+    - Mockingjay/XCTest (= 2.0.0)
+  - Mockingjay/Core (2.0.0):
+    - URITemplate (~> 2.0)
+  - Mockingjay/XCTest (2.0.0):
+    - Mockingjay/Core
+  - Nimble (6.0.1)
+  - Quick (1.1.0)
   - SDWebImage (4.0.0):
     - SDWebImage/Core (= 4.0.0)
   - SDWebImage/Core (4.0.0)
   - SwiftLint (0.16.1)
+  - SwiftWebVC (0.3.4)
   - SwiftyJSON (3.1.4)
+  - URITemplate (2.0.0)
 
 DEPENDENCIES:
   - Cosmos
+  - Mockingjay
+  - Nimble
+  - Quick
   - SDWebImage
   - SwiftLint
+  - SwiftWebVC
   - SwiftyJSON
 
 SPEC CHECKSUMS:
   Cosmos: 007c0b8e33a85e5363911bdd933571bbe221f7ef
+  Mockingjay: 7122a3fc0597aa63438e4cd9b71b7bc8aac05b87
+  Nimble: 1527fd1bd2b4cf0636251a36bc8ab37e81da8347
+  Quick: dafc587e21eed9f4cab3249b9f9015b0b7a7f71d
   SDWebImage: 76a6348bdc74eb5a55dd08a091ef298e56b55e41
   SwiftLint: b8b683208cc09640898f16318a7a452274e91f61
+  SwiftWebVC: 4e0e69f80db2ea78a0ee33e8bac053e1028fb1d7
   SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
+  URITemplate: a5acb3f76c6a2338116fde88b658d83f91bbac45
 
-PODFILE CHECKSUM: 794fc08cfb2b577d030579b2b0a469b61c55a2e9
+PODFILE CHECKSUM: 5777773ce9e97bbe0da2049edc025a2dcc735cf3
 
 COCOAPODS: 1.2.0

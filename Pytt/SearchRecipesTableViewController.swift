@@ -51,6 +51,10 @@ class SearchRecipesTableViewController: UITableViewController, SearchRecipesView
         return presenter.height(forRow: indexPath.row)
     }
     
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        presenter.didSelect(row: indexPath.row)
+    }
+    
     // MARK: - SearchRecipesView
     
     func refreshRecipesView() {

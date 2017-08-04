@@ -6,6 +6,12 @@
 //  Copyright © 2017 Johan Hosk. All rights reserved.
 //
 
+
+//Test with https://github.com/kylef-archive/Mockingjay
+//or https://github.com/AliSoftware/OHHTTPStubs
+//also https://github.com/Quick/Quick
+//Use OHHTTPStubs https://github.com/mokacoding/OHHTTPStubsExample
+
 import Foundation
 
 
@@ -33,7 +39,7 @@ class ApiClientImplementation: ApiClient {
     }
     
     // MARK: - ApiClient
-    
+
     func execute(request: ApiRequest,
                  completionHandler: @escaping (Result<ApiResponse>) -> Void) {
         
