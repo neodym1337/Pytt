@@ -26,8 +26,8 @@ class SearchRecipesTableViewController: UITableViewController, SearchRecipesView
                            forCellReuseIdentifier: SearchRecipesTableViewCellImplementation.defaultReuseIdentifier)
         tableView.tableFooterView = UIView(frame: CGRect.zero)
         tableView.separatorStyle = .none
-        view.backgroundColor = Color.lightBackground
-        tableView.backgroundColor = Color.lightBackground
+        view.backgroundColor = UIColor.lightBackground
+        tableView.backgroundColor = UIColor.lightBackground
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

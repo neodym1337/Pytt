@@ -33,19 +33,19 @@ class SearchRecipesTableViewCellImplementation: UITableViewCell, SearchRecipesTa
         foodImageView.layer.cornerRadius = foodImageView.frame.size.width * 0.5
         foodImageView.clipsToBounds = true
         foodImageView.layer.borderWidth = 2.0
-        foodImageView.layer.borderColor = Color.darkBackground.cgColor
+        foodImageView.layer.borderColor = UIColor.darkBackground.cgColor
         
-        backgroundColor = Color.lightBackground
-        contentView.layer.borderColor = Color.border.cgColor
+        backgroundColor = UIColor.lightBackground
+        contentView.layer.borderColor = UIColor.border.cgColor
         
         titleLabel.backgroundColor = UIColor.clear
-        titleLabel.textColor = Color.darkText
+        titleLabel.textColor = UIColor.darkText
         
-        ratingView.backgroundColor = Color.lightBackground
-        ratingView.settings.emptyBorderColor = Color.affirmation
+        ratingView.backgroundColor = UIColor.lightBackground
+        ratingView.settings.emptyBorderColor = UIColor.affirmation
         ratingView.settings.emptyColor = UIColor.clear
-        ratingView.settings.filledBorderColor = Color.affirmation
-        ratingView.settings.filledColor = Color.affirmation
+        ratingView.settings.filledBorderColor = UIColor.affirmation
+        ratingView.settings.filledColor = UIColor.affirmation
     }
     
     func display(title: String) {

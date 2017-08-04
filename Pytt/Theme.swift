@@ -14,33 +14,58 @@
 
 import UIKit
 
-
-struct Color {
+extension UIColor {
     
-    static let theme = UIColor(hexString: "#4FCEAD") //On navigation bars button titles, progress indicator
-    static let border = UIColor(hexString: "#F0B67F") // Hair line separators in between views.
-    static let shadow = UIColor(hexString: "#513C2C") // Shadow colours for card like design.
-    static let darkBackground = UIColor(hexString: "#4FCEAD") // Dark background colour to group UI components with light colour.
-    static let intermidiateBackground = UIColor(hexString: "#4FCEAD") // Used for grouping UI elements with some other colour scheme.
-    static let lightBackground = UIColor(hexString: "#DFF2D8") // Light background colour to group UI components with dark colour.
-    static let darkText = UIColor(hexString: "#513C2C")
-    static let lightText = UIColor(hexString: "#F0B67F")
-    static let affirmation = UIColor(hexString: "#4FCEAD") // Colour to show success, something right for user.
-    
-    func custom(hexString: String, _ opacity:Float) -> UIColor {
-        return UIColor(hexString: hexString).withAlphaComponent(CGFloat(opacity))
+    class var theme: UIColor {
+        return UIColor(hexString: "#4FCEAD") //On navigation bars button titles, progress indicator
     }
     
+    class var border: UIColor {
+        return UIColor(hexString: "#F0B67F") // Hair line separators in between views.
+    }
+    
+    class var shadow: UIColor {
+        return UIColor(hexString: "#513C2C") // Shadow colours for card like design.
+    }
+    
+    class var darkBackground: UIColor {
+        return UIColor(hexString: "#4FCEAD") // Dark background colour to group UI components with light colour.
+    }
+    
+    class var intermidiateBackground: UIColor {
+        return UIColor(hexString: "#4FCEAD") // Used for grouping UI elements with some other colour scheme
+    }
+    
+    class var lightBackground: UIColor {
+        return UIColor(hexString: "#DFF2D8") // Light background colour to group UI components with dark colour.
+    }
+    
+    class var darkText: UIColor {
+        return UIColor(hexString: "#513C2C")
+    }
+    
+    class var lightText: UIColor {
+        return UIColor(hexString: "#F0B67F")
+    }
+    
+    class var affirmation: UIColor {
+        return UIColor(hexString: "#4FCEAD") // Colour to show success, something right for user.
+    }
+    
+    class var failure: UIColor {
+        return UIColor(hexString: "#4FCEAD") // Colour to show success, something right for user.
+    }
+    
+    class func custom(hexString: String, _ opacity: Float) -> UIColor {
+        return UIColor(hexString: hexString).withAlphaComponent(CGFloat(opacity))
+    }
 }
 
 struct Theme {
     
     static func apply() {
-        UISearchBar.appearance().tintColor = Color.lightBackground
-        UINavigationBar.appearance().tintColor = Color.lightBackground
-        UINavigationBar.appearance().barTintColor = Color.lightBackground
+        UISearchBar.appearance().tintColor = UIColor.lightBackground
+        UINavigationBar.appearance().tintColor = UIColor.lightBackground
+        UINavigationBar.appearance().barTintColor = UIColor.lightBackground
     }
-    
-    
-    
 }
