@@ -10,7 +10,6 @@
 
 
 import Foundation
-import SwiftyJSON
 
 protocol InitializableWithData {
     init(data: Data?) throws
@@ -48,12 +47,10 @@ struct ApiParseError: Error {
 struct ApiResponse {
     let httpUrlResponse: HTTPURLResponse
     let data: Data
-    let json: JSON
     
     init(data: Data, httpUrlResponse: HTTPURLResponse) throws {
         self.httpUrlResponse = httpUrlResponse
         self.data = data
-        self.json = JSON(data: data)
     }
 }
 

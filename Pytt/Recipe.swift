@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Decodable
 
 struct Recipe {
     var id: String
@@ -16,11 +17,22 @@ struct Recipe {
     var sourceUrl: String
 }
 
-
 // MARK: Equatable
 extension Recipe: Equatable {}
 
 // equatable func must be global
 func == (lhs: Recipe, rhs: Recipe) -> Bool {
     return lhs.id == rhs.id
+}
+
+extension Recipe: Decodable {
+    static func decode(j: Any) throws -> Recipe {
+        return try Recipe(
+            id: j => "recipe_id",
+            title: j => "title",
+            rank: j => "social_rank",
+            imageUrl: j => "image_url",
+            sourceUrl: j => "source_url"
+        )
+    }
 }

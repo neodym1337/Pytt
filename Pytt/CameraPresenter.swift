@@ -20,9 +20,9 @@ protocol CapturePresenter {
     //Things that have to be accessed outside of presenter
 }
 
-class CapturePresenterImplementation: CapturePresenter, FrameExtractorUseCaseDelegate {
+class CapturePresenterImplementation: CapturePresenter/*, FrameExtractorUseCaseDelegate*/ {
     fileprivate weak var view: CaptureView?
-    fileprivate let frameExtractorUseCase: FrameExtractorUseCaseImplementation
+    //fileprivate let frameExtractorUseCase: FrameExtractorUseCaseImplementation
     
     
     internal let router: CaptureRouter
@@ -35,11 +35,11 @@ class CapturePresenterImplementation: CapturePresenter, FrameExtractorUseCaseDel
         }
     }
     
-    init(view: CaptureView,
-         frameExtractorUseCase: FrameExtractorUseCaseImplementation,
+    init(view: CaptureView/*,
+         frameExtractorUseCase: FrameExtractorUseCaseImplementation*/,
          router: CaptureRouter) {
         self.view = view
-        self.frameExtractorUseCase = frameExtractorUseCase
+        //self.frameExtractorUseCase = frameExtractorUseCase
         self.router = router
     }
     

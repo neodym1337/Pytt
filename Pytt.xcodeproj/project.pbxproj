@@ -26,8 +26,6 @@
 		D8272E691F2B311700560A5C /* ApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8272E681F2B311700560A5C /* ApiClient.swift */; };
 		D8272E6B1F2B334400560A5C /* ApiResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8272E6A1F2B334400560A5C /* ApiResponse.swift */; };
 		D8272E6D1F2B357000560A5C /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8272E6C1F2B357000560A5C /* Result.swift */; };
-		D8272E6F1F2B360200560A5C /* JSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8272E6E1F2B360200560A5C /* JSON.swift */; };
-		D8272E721F2B365700560A5C /* ApiRecipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8272E711F2B365700560A5C /* ApiRecipe.swift */; };
 		D832FD0E1F2B422D0074E6FF /* RecipesGateway.swift in Sources */ = {isa = PBXBuildFile; fileRef = D832FD0D1F2B422D0074E6FF /* RecipesGateway.swift */; };
 		D832FD121F2B42F00074E6FF /* ApiRecipesGateway.swift in Sources */ = {isa = PBXBuildFile; fileRef = D832FD111F2B42F00074E6FF /* ApiRecipesGateway.swift */; };
 		D832FD151F2B44280074E6FF /* RecipesApiRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D832FD141F2B44280074E6FF /* RecipesApiRequest.swift */; };
@@ -40,6 +38,8 @@
 		D86DE9C31F33488D003EDCB8 /* URLSessionStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = D86DE9C21F33488D003EDCB8 /* URLSessionStub.swift */; };
 		D86DE9C51F334C5D003EDCB8 /* ApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = D86DE9C41F334C5D003EDCB8 /* ApiClient.swift */; };
 		D88962B81F2F2B7E00EC11D8 /* SearchRecipesConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D88962B71F2F2B7E00EC11D8 /* SearchRecipesConfigurator.swift */; };
+		D88CCE451F45914500854CE7 /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = D88CCE441F45914500854CE7 /* Recipe.swift */; };
+		D88CCE471F45BCEC00854CE7 /* recipe.json in Resources */ = {isa = PBXBuildFile; fileRef = D88CCE461F45BCEC00854CE7 /* recipe.json */; };
 		D8982B231F346EAD0035F139 /* recipeList.json in Resources */ = {isa = PBXBuildFile; fileRef = D8982B221F346EAD0035F139 /* recipeList.json */; };
 		D8E0204F1F2F31AA008AD6ED /* SearchRecipeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8E0204E1F2F31AA008AD6ED /* SearchRecipeTableViewCell.swift */; };
 		D8E020511F2F3344008AD6ED /* SearchRecipeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D8E020501F2F3344008AD6ED /* SearchRecipeTableViewCell.xib */; };
@@ -105,8 +105,6 @@
 		D8272E681F2B311700560A5C /* ApiClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiClient.swift; sourceTree = "<group>"; };
 		D8272E6A1F2B334400560A5C /* ApiResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiResponse.swift; sourceTree = "<group>"; };
 		D8272E6C1F2B357000560A5C /* Result.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
-		D8272E6E1F2B360200560A5C /* JSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSON.swift; sourceTree = "<group>"; };
-		D8272E711F2B365700560A5C /* ApiRecipe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiRecipe.swift; sourceTree = "<group>"; };
 		D832FD0D1F2B422D0074E6FF /* RecipesGateway.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipesGateway.swift; sourceTree = "<group>"; };
 		D832FD111F2B42F00074E6FF /* ApiRecipesGateway.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiRecipesGateway.swift; sourceTree = "<group>"; };
 		D832FD141F2B44280074E6FF /* RecipesApiRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipesApiRequest.swift; sourceTree = "<group>"; };
@@ -119,6 +117,8 @@
 		D86DE9C21F33488D003EDCB8 /* URLSessionStub.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLSessionStub.swift; sourceTree = "<group>"; };
 		D86DE9C41F334C5D003EDCB8 /* ApiClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiClient.swift; sourceTree = "<group>"; };
 		D88962B71F2F2B7E00EC11D8 /* SearchRecipesConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchRecipesConfigurator.swift; sourceTree = "<group>"; };
+		D88CCE441F45914500854CE7 /* Recipe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
+		D88CCE461F45BCEC00854CE7 /* recipe.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = recipe.json; sourceTree = "<group>"; };
 		D8982B221F346EAD0035F139 /* recipeList.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = recipeList.json; sourceTree = "<group>"; };
 		D8E0204E1F2F31AA008AD6ED /* SearchRecipeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchRecipeTableViewCell.swift; sourceTree = "<group>"; };
 		D8E020501F2F3344008AD6ED /* SearchRecipeTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SearchRecipeTableViewCell.xib; sourceTree = "<group>"; };
@@ -273,6 +273,7 @@
 		D8272E4A1F2B2D0A00560A5C /* PyttTests */ = {
 			isa = PBXGroup;
 			children = (
+				D88CCE431F45913400854CE7 /* Entities */,
 				D80EC2961F33215F00BBD472 /* Gateways */,
 				D80EC2991F33441700BBD472 /* Presenters */,
 				D80EC29A1F33442700BBD472 /* Helpers */,
@@ -332,14 +333,6 @@
 			name = Other;
 			sourceTree = "<group>";
 		};
-		D8272E701F2B364200560A5C /* Entities */ = {
-			isa = PBXGroup;
-			children = (
-				D8272E711F2B365700560A5C /* ApiRecipe.swift */,
-			);
-			name = Entities;
-			sourceTree = "<group>";
-		};
 		D832FD0F1F2B42390074E6FF /* Gateways */ = {
 			isa = PBXGroup;
 			children = (
@@ -373,6 +366,15 @@
 				D81F8C1D1F309B1D0075B3BD /* CaptureRouter.swift */,
 			);
 			name = CameraView;
+			sourceTree = "<group>";
+		};
+		D88CCE431F45913400854CE7 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				D88CCE461F45BCEC00854CE7 /* recipe.json */,
+				D88CCE441F45914500854CE7 /* Recipe.swift */,
+			);
+			name = Entities;
 			sourceTree = "<group>";
 		};
 		D8982B211F346E930035F139 /* Responses */ = {
@@ -421,10 +423,8 @@
 			children = (
 				D832FD131F2B44150074E6FF /* Requests */,
 				D832FD101F2B42DF0074E6FF /* Gateways */,
-				D8272E701F2B364200560A5C /* Entities */,
 				D8272E6A1F2B334400560A5C /* ApiResponse.swift */,
 				D8272E681F2B311700560A5C /* ApiClient.swift */,
-				D8272E6E1F2B360200560A5C /* JSON.swift */,
 			);
 			name = API;
 			sourceTree = "<group>";
@@ -580,6 +580,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D8982B231F346EAD0035F139 /* recipeList.json in Resources */,
+				D88CCE471F45BCEC00854CE7 /* recipe.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -614,13 +615,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-PyttUITests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		45EED828490808A45009D5A1 /* [CP] Embed Pods Frameworks */ = {
@@ -644,9 +648,18 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Pytt/Pods-Pytt-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Cosmos/Cosmos.framework",
+				"${BUILT_PRODUCTS_DIR}/Decodable/Decodable.framework",
+				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftWebVC/SwiftWebVC.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Cosmos.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Decodable.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftWebVC.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -674,9 +687,18 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-PyttTests/Pods-PyttTests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Mockingjay/Mockingjay.framework",
+				"${BUILT_PRODUCTS_DIR}/Nimble/Nimble.framework",
+				"${BUILT_PRODUCTS_DIR}/Quick/Quick.framework",
+				"${BUILT_PRODUCTS_DIR}/URITemplate/URITemplate.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Mockingjay.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Nimble.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Quick.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/URITemplate.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -689,13 +711,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Pytt-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		A6A3E25E02D70E0F93CD99F9 /* [CP] Copy Pods Resources */ = {
@@ -719,13 +744,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-PyttTests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		D8566CD71F31DA7300ACBF4E /* ShellScript */ = {
@@ -762,7 +790,6 @@
 				D8272E6B1F2B334400560A5C /* ApiResponse.swift in Sources */,
 				D8EDD95C1F2B61AA0044E66B /* SearchRecipesTableViewController.swift in Sources */,
 				D80EC2911F33082900BBD472 /* RecipeDetailsPresenter.swift in Sources */,
-				D8272E6F1F2B360200560A5C /* JSON.swift in Sources */,
 				D8F244F71F2B3E51005E2DEA /* Recipe.swift in Sources */,
 				D85F6D941F2F8EDC0023D64C /* FrameExtractor.swift in Sources */,
 				D81F8C201F309C900075B3BD /* ImageDetector.swift in Sources */,
@@ -770,7 +797,6 @@
 				D80EC2951F33084E00BBD472 /* RecipeDetailsConfigurator.swift in Sources */,
 				D8272E351F2B2D0A00560A5C /* AppDelegate.swift in Sources */,
 				D8EDD9651F2B63A30044E66B /* DisplayRecipeSearchList.swift in Sources */,
-				D8272E721F2B365700560A5C /* ApiRecipe.swift in Sources */,
 				D832FD151F2B44280074E6FF /* RecipesApiRequest.swift in Sources */,
 				D8EDD95E1F2B61BC0044E66B /* SearchRecipesPresenter.swift in Sources */,
 				D8272E6D1F2B357000560A5C /* Result.swift in Sources */,
@@ -792,6 +818,7 @@
 				D86DE9C31F33488D003EDCB8 /* URLSessionStub.swift in Sources */,
 				D80EC29E1F33445900BBD472 /* Book.swift in Sources */,
 				D86DE9C51F334C5D003EDCB8 /* ApiClient.swift in Sources */,
+				D88CCE451F45914500854CE7 /* Recipe.swift in Sources */,
 				D80EC2981F33217C00BBD472 /* ApiClientTests.swift in Sources */,
 				D86DE9C11F3347CE003EDCB8 /* NSError.swift in Sources */,
 			);
@@ -881,7 +908,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = Pytt;
@@ -927,7 +954,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_NAME = Pytt;
 				SDKROOT = iphoneos;
@@ -945,7 +972,7 @@
 				DEVELOPMENT_TEAM = W6EXZ7FDRM;
 				INFOPLIST_FILE = Pytt/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.johan.Pytt;
+				PRODUCT_BUNDLE_IDENTIFIER = com.johan.PyttApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "6e5d2a09-f240-4d57-a32c-a597bd7554ba";
 				PROVISIONING_PROFILE_SPECIFIER = "Johan Wildcard Profile";
@@ -958,12 +985,14 @@
 			baseConfigurationReference = A834B05149482427575B2676 /* Pods-Pytt.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				DEVELOPMENT_TEAM = W6EXZ7FDRM;
 				INFOPLIST_FILE = Pytt/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.johan.Pytt;
+				PRODUCT_BUNDLE_IDENTIFIER = com.johan.PyttApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE = "406118f4-e658-4f35-bdaa-65cea598795d";
+				PROVISIONING_PROFILE_SPECIFIER = "PyttApp AppStore";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;

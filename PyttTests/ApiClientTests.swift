@@ -26,20 +26,25 @@ class ApiClientTest: XCTestCase {
     }
     
     func test_execute_successful_http_response_parse_ok() {
+        
         stub(everything, jsonData(mockResponseData(), status: 200, headers: nil))
-        waitUntil(timeout: 5) { done in
-            let request = RecipesApiRequest(ingredients: "egal")
-            self.apiClient.execute(request: request) { (result) in
-                switch result {
-                case let .success(response):
-                    expect(response.json["recipes"].array).toNot(beNil())
-                    break
-                case .failure(_):
-                    fail("Expected successful response")
-                    break
+        
+        describe("It shhould fetch recipes and parse them") { 
+            waitUntil(timeout: 5) { done in
+                let request = RecipesApiRequest(ingredients: "egal")
+                self.apiClient.execute(request: request) { (result) in
+                    switch result {
+                    case let .success(response):
+                        expect(response.json["recipes"].array).toNot(beNil())
+                        break
+                    case .failure(_):
+                        fail("Expected successful response")
+                        break
+                    }
+                    done()
                 }
-                done()
             }
+
         }
     }
     

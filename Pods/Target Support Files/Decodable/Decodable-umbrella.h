@@ -10,7 +10,8 @@
 #endif
 #endif
 
+#import "Decodable.h"
 
-FOUNDATION_EXPORT double SwiftyJSONVersionNumber;
-FOUNDATION_EXPORT const unsigned char SwiftyJSONVersionString[];
+FOUNDATION_EXPORT double DecodableVersionNumber;
+FOUNDATION_EXPORT const unsigned char DecodableVersionString[];
 

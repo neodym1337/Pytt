@@ -10,7 +10,6 @@
 // Network layer consists of the Request, the dispatcher (client), the task (gateway) and the response 
 
 import Foundation
-import SwiftyJSON
 
 protocol ApiRecipesGateway: RecipesGateway {
 
@@ -45,6 +44,10 @@ class ApiRecipesGatewayImplementation: ApiRecipesGateway {
     }
     
     func handleResponse(response: ApiResponse) -> [Recipe] {
-        return response.json["recipes"].arrayValue.map { return ApiRecipe(json: $0).recipe }
+        guard let json = try? JSONSerialization.jsonObject(with: response.data, options: []),
+            let recipes = try? [Recipe].decode(json) else {
+            return [Recipe]()
+        }
+        return recipes
     }
 }

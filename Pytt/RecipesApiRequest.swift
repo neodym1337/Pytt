@@ -22,6 +22,8 @@ import Foundation
 //Inspired by testable network layer
 //https://medium.com/ios-os-x-development/isolating-tasks-in-swift-or-how-to-create-a-testable-networking-layer-d0380e69f7e3
 
+//Also https://academy.realm.io/posts/slug-jake-craige-modern-swift-networking-with-swish/
+
 let apiKey = "055a3a352bf62b2fefbc53056a93828b"
 let https = "https://"
 let baseUrl = "food2fork.com"

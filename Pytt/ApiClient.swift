@@ -12,6 +12,8 @@
 //also https://github.com/Quick/Quick
 //Use OHHTTPStubs https://github.com/mokacoding/OHHTTPStubsExample
 
+//api client and networking layer inspired by https://github.com/thoughtbot/Swish
+
 import Foundation
 
 
