@@ -26,13 +26,13 @@ func == (lhs: Recipe, rhs: Recipe) -> Bool {
 }
 
 extension Recipe: Decodable {
-    static func decode(j: Any) throws -> Recipe {
+    static func decode(_ json: Any) throws -> Recipe {
         return try Recipe(
-            id: j => "recipe_id",
-            title: j => "title",
-            rank: j => "social_rank",
-            imageUrl: j => "image_url",
-            sourceUrl: j => "source_url"
+            id: json => "recipe_id",
+            title: json => "title",
+            rank: json => "social_rank",
+            imageUrl: json => "image_url",
+            sourceUrl: json => "source_url"
         )
     }
 }

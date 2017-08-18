@@ -16,7 +16,7 @@ protocol InitializableWithData {
 }
 
 protocol InitializableWithJson {
-    init(json: JSON) throws
+    init(json: Any) throws
 }
 
 struct NetworkRequestError: Error {

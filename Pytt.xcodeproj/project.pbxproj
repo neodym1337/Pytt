@@ -39,8 +39,12 @@
 		D86DE9C51F334C5D003EDCB8 /* ApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = D86DE9C41F334C5D003EDCB8 /* ApiClient.swift */; };
 		D88962B81F2F2B7E00EC11D8 /* SearchRecipesConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D88962B71F2F2B7E00EC11D8 /* SearchRecipesConfigurator.swift */; };
 		D88CCE451F45914500854CE7 /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = D88CCE441F45914500854CE7 /* Recipe.swift */; };
-		D88CCE471F45BCEC00854CE7 /* recipe.json in Resources */ = {isa = PBXBuildFile; fileRef = D88CCE461F45BCEC00854CE7 /* recipe.json */; };
-		D8982B231F346EAD0035F139 /* recipeList.json in Resources */ = {isa = PBXBuildFile; fileRef = D8982B221F346EAD0035F139 /* recipeList.json */; };
+		D88CCE471F45BCEC00854CE7 /* recipeValid.json in Resources */ = {isa = PBXBuildFile; fileRef = D88CCE461F45BCEC00854CE7 /* recipeValid.json */; };
+		D88CCE491F4706A800854CE7 /* recipeNoTitle.json in Resources */ = {isa = PBXBuildFile; fileRef = D88CCE481F4706A800854CE7 /* recipeNoTitle.json */; };
+		D88CCE4B1F4706D200854CE7 /* recipeNoSource.json in Resources */ = {isa = PBXBuildFile; fileRef = D88CCE4A1F4706D200854CE7 /* recipeNoSource.json */; };
+		D88CCE4D1F4706FD00854CE7 /* recipeInvalidFormat.json in Resources */ = {isa = PBXBuildFile; fileRef = D88CCE4C1F4706FD00854CE7 /* recipeInvalidFormat.json */; };
+		D88CCE4F1F47079100854CE7 /* JSONSerialization+Parse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D88CCE4E1F47079100854CE7 /* JSONSerialization+Parse.swift */; };
+		D8982B231F346EAD0035F139 /* recipeListValid.json in Resources */ = {isa = PBXBuildFile; fileRef = D8982B221F346EAD0035F139 /* recipeListValid.json */; };
 		D8E0204F1F2F31AA008AD6ED /* SearchRecipeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8E0204E1F2F31AA008AD6ED /* SearchRecipeTableViewCell.swift */; };
 		D8E020511F2F3344008AD6ED /* SearchRecipeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D8E020501F2F3344008AD6ED /* SearchRecipeTableViewCell.xib */; };
 		D8E020531F2F4DC6008AD6ED /* UITableViewCell+Identifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8E020521F2F4DC6008AD6ED /* UITableViewCell+Identifier.swift */; };
@@ -118,8 +122,12 @@
 		D86DE9C41F334C5D003EDCB8 /* ApiClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiClient.swift; sourceTree = "<group>"; };
 		D88962B71F2F2B7E00EC11D8 /* SearchRecipesConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchRecipesConfigurator.swift; sourceTree = "<group>"; };
 		D88CCE441F45914500854CE7 /* Recipe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
-		D88CCE461F45BCEC00854CE7 /* recipe.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = recipe.json; sourceTree = "<group>"; };
-		D8982B221F346EAD0035F139 /* recipeList.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = recipeList.json; sourceTree = "<group>"; };
+		D88CCE461F45BCEC00854CE7 /* recipeValid.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = recipeValid.json; sourceTree = "<group>"; };
+		D88CCE481F4706A800854CE7 /* recipeNoTitle.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = recipeNoTitle.json; sourceTree = "<group>"; };
+		D88CCE4A1F4706D200854CE7 /* recipeNoSource.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = recipeNoSource.json; sourceTree = "<group>"; };
+		D88CCE4C1F4706FD00854CE7 /* recipeInvalidFormat.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = recipeInvalidFormat.json; sourceTree = "<group>"; };
+		D88CCE4E1F47079100854CE7 /* JSONSerialization+Parse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "JSONSerialization+Parse.swift"; sourceTree = "<group>"; };
+		D8982B221F346EAD0035F139 /* recipeListValid.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = recipeListValid.json; sourceTree = "<group>"; };
 		D8E0204E1F2F31AA008AD6ED /* SearchRecipeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchRecipeTableViewCell.swift; sourceTree = "<group>"; };
 		D8E020501F2F3344008AD6ED /* SearchRecipeTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SearchRecipeTableViewCell.xib; sourceTree = "<group>"; };
 		D8E020521F2F4DC6008AD6ED /* UITableViewCell+Identifier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableViewCell+Identifier.swift"; sourceTree = "<group>"; };
@@ -329,6 +337,7 @@
 				D8E020591F2F6AFD008AD6ED /* UIColor+Hex.swift */,
 				D8E0205B1F2F6B37008AD6ED /* Theme.swift */,
 				D8566CD51F30B4D700ACBF4E /* InterfaceOrientation.swift */,
+				D88CCE4E1F47079100854CE7 /* JSONSerialization+Parse.swift */,
 			);
 			name = Other;
 			sourceTree = "<group>";
@@ -371,7 +380,6 @@
 		D88CCE431F45913400854CE7 /* Entities */ = {
 			isa = PBXGroup;
 			children = (
-				D88CCE461F45BCEC00854CE7 /* recipe.json */,
 				D88CCE441F45914500854CE7 /* Recipe.swift */,
 			);
 			name = Entities;
@@ -380,7 +388,11 @@
 		D8982B211F346E930035F139 /* Responses */ = {
 			isa = PBXGroup;
 			children = (
-				D8982B221F346EAD0035F139 /* recipeList.json */,
+				D88CCE461F45BCEC00854CE7 /* recipeValid.json */,
+				D8982B221F346EAD0035F139 /* recipeListValid.json */,
+				D88CCE481F4706A800854CE7 /* recipeNoTitle.json */,
+				D88CCE4A1F4706D200854CE7 /* recipeNoSource.json */,
+				D88CCE4C1F4706FD00854CE7 /* recipeInvalidFormat.json */,
 			);
 			name = Responses;
 			sourceTree = "<group>";
@@ -579,8 +591,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D8982B231F346EAD0035F139 /* recipeList.json in Resources */,
-				D88CCE471F45BCEC00854CE7 /* recipe.json in Resources */,
+				D8982B231F346EAD0035F139 /* recipeListValid.json in Resources */,
+				D88CCE4B1F4706D200854CE7 /* recipeNoSource.json in Resources */,
+				D88CCE471F45BCEC00854CE7 /* recipeValid.json in Resources */,
+				D88CCE4D1F4706FD00854CE7 /* recipeInvalidFormat.json in Resources */,
+				D88CCE491F4706A800854CE7 /* recipeNoTitle.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -688,6 +703,7 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-PyttTests/Pods-PyttTests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Decodable/Decodable.framework",
 				"${BUILT_PRODUCTS_DIR}/Mockingjay/Mockingjay.framework",
 				"${BUILT_PRODUCTS_DIR}/Nimble/Nimble.framework",
 				"${BUILT_PRODUCTS_DIR}/Quick/Quick.framework",
@@ -695,6 +711,7 @@
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Decodable.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Mockingjay.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Nimble.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Quick.framework",
@@ -783,6 +800,7 @@
 				D8EDD9601F2B62C60044E66B /* SearchRecipesRouter.swift in Sources */,
 				D85F6D921F2F8E070023D64C /* CaptureViewController.swift in Sources */,
 				D8E020581F2F5EA5008AD6ED /* RecipeCellPresenter.swift in Sources */,
+				D88CCE4F1F47079100854CE7 /* JSONSerialization+Parse.swift in Sources */,
 				D81F8C1C1F309AC10075B3BD /* CaptureConfigurator.swift in Sources */,
 				D85F6D901F2F8DF60023D64C /* CameraPresenter.swift in Sources */,
 				D8E0205C1F2F6B37008AD6ED /* Theme.swift in Sources */,

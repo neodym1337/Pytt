@@ -5,52 +5,59 @@
 //  Created by Hosk, Johan on 2017-08-03.
 //  Copyright © 2017 Johan Hosk. All rights reserved.
 //
+//http://hoangtran.me/ios/testing/2016/09/12/unit-test-network-layer-in-ios/
+// https://www.martinfowler.com/bliki/TestDouble.html
 
-import XCTest
-import SwiftyJSON
 import Mockingjay
 import Quick
 import Nimble
 
 @testable import Pytt
 
-class ApiClientTest: XCTestCase {
-    // https://www.martinfowler.com/bliki/TestDouble.html
+class ApiClientSpec: QuickSpec {
     
-    var apiClient: ApiClientImplementation!
+    override func spec() {
+        super.spec()
     
-    override func setUp() {
-        super.setUp()
-        apiClient = ApiClientImplementation(urlSessionConfiguration: URLSessionConfiguration.default,
-                                                completionHandlerQueue: OperationQueue.main)
-    }
-    
-    func test_execute_successful_http_response_parse_ok() {
         
-        stub(everything, jsonData(mockResponseData(), status: 200, headers: nil))
-        
-        describe("It shhould fetch recipes and parse them") { 
-            waitUntil(timeout: 5) { done in
-                let request = RecipesApiRequest(ingredients: "egal")
-                self.apiClient.execute(request: request) { (result) in
-                    switch result {
-                    case let .success(response):
-                        expect(response.json["recipes"].array).toNot(beNil())
-                        break
-                    case .failure(_):
-                        fail("Expected successful response")
-                        break
+        describe("an api client") {
+            var apiClient: ApiClient!
+            
+            beforeEach {
+                apiClient = ApiClientImplementation(urlSessionConfiguration: URLSessionConfiguration.default,
+                                                                   completionHandlerQueue: OperationQueue.main)
+                self.stub(everything, jsonData(self.mockResponseData(), status: 200, headers: nil))
+                
+            }
+            
+            describe("fetching and parsing") {
+            
+                it("is successfull") {
+                    waitUntil(timeout: 5) { done in
+                        let request = RecipesApiRequest(ingredients: "egal")
+                        apiClient.execute(request: request) { (result) in
+                            switch result {
+                            case let .success(response):
+                                do {
+                                    let json = try JSONSerialization.jsonObject(with: response.data, options: [])
+                                    let recipes = try [Recipe].decode(json)
+                                    expect(recipes.count) > 0
+                                } catch {
+                                    fail("Could not parse response")
+                                }
+                                break
+                            case .failure(_):
+                                fail("Expected successful response")
+                                break
+                            }
+                            done()
+                        }
                     }
-                    done()
                 }
             }
-
         }
     }
-    
-    override func tearDown() {
-        removeAllStubs()
-    }
+
     
     func mockResponseData() -> Data {
         guard let jsonFileUrl = Bundle(for: type(of: self)).url(forResource: "recipeList", withExtension: "json") else {

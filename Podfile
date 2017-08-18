@@ -19,6 +19,7 @@ target 'Pytt' do
     pod 'Quick'
     pod 'Nimble'
     pod 'Mockingjay'
+    pod 'Decodable'
   end
 
   target 'PyttUITests' do
