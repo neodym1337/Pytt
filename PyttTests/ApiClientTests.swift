@@ -60,7 +60,8 @@ class ApiClientSpec: QuickSpec {
 
     
     func mockResponseData() -> Data {
-        guard let jsonFileUrl = Bundle(for: type(of: self)).url(forResource: "recipeList", withExtension: "json") else {
+        guard let jsonFileUrl = Bundle(for: type(of: self)).url(
+                                forResource: "recipeListValid", withExtension: "json") else {
             preconditionFailure("Could not get mock response file from bundle")
         }
         guard let mockResponseData = try? Data(contentsOf: jsonFileUrl) else {
