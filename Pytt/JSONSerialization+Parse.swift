@@ -10,18 +10,18 @@ import Foundation
 
 extension JSONSerialization {
     
-    static func jsonObject(withFilename fileName: String, in bundle: Bundle) throws -> Any {
+    static func jsonObject(withFilename fileName: String, in bundle: Bundle) -> Result<Any> {
 
         guard let jsonFileUrl = bundle.url(forResource: fileName, withExtension: "json") else {
-            throw JsonParsingError.URLError
+            return .failure(JsonParsingError.URLError)
         }
         
         do {
             let data = try Data(contentsOf: jsonFileUrl)
             let json = try JSONSerialization.jsonObject(with: data, options: [])
-            return json
+            return .success(json)
         } catch {
-            throw error
+            return .failure(error)
         }
     }
 }

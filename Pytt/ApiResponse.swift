@@ -61,5 +61,3 @@ extension NSError {
                        userInfo: [NSLocalizedDescriptionKey: "A parsing error occured"])
     }
 }
-
-

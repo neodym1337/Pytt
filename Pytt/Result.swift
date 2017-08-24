@@ -6,8 +6,12 @@
 //  Copyright © 2017 Johan Hosk. All rights reserved.
 //
 
+// See https://github.com/antitypical/Result
+
 import Foundation
 
+
+//Use custom errors for failure cases
 struct CoreError: Error {
     var localizedDescription: String {
         return message
@@ -15,7 +19,6 @@ struct CoreError: Error {
     var message = ""
 }
 
-// See https://github.com/antitypical/Result
 enum Result<T> {
     case success(T)
     case failure(Error)

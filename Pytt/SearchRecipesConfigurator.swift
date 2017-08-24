@@ -9,12 +9,12 @@
 import Foundation
 
 protocol SearchRecipesConfigurator {
-    func configure(searchRecipesTableViewController: SearchRecipesTableViewController)
+    func configure(RecipeListViewController: RecipeListViewController)
 }
 
-class SearchRecipesConfiguratorImplementation: SearchRecipesConfigurator {
+class RecipeListConfiguratorImplementation: SearchRecipesConfigurator {
     
-    func configure(searchRecipesTableViewController: SearchRecipesTableViewController) {
+    func configure(RecipeListViewController: RecipeListViewController) {
         let apiClient = ApiClientImplementation(urlSessionConfiguration: URLSessionConfiguration.default,
                                                 completionHandlerQueue: OperationQueue.main)
         let apiRecipesGateway = ApiRecipesGatewayImplementation(apiClient: apiClient)
@@ -22,12 +22,12 @@ class SearchRecipesConfiguratorImplementation: SearchRecipesConfigurator {
         //Connect realm stuff here
         
         let recipeListUseCase = RecipeListUseCaseImplementation(recipesGateway: apiRecipesGateway)
-        let router = SearchRecipesRouterImplementation(searchRecipesTableViewController:
-                                                        searchRecipesTableViewController)
+        let router = SearchRecipesRouterImplementation(RecipeListViewController:
+                                                        RecipeListViewController)
         
-        let presenter = SearchRecipesPresenterImplementation(view: searchRecipesTableViewController,
+        let presenter = SearchRecipesPresenterImplementation(view: RecipeListViewController,
                                                              recipeListUseCase: recipeListUseCase,
                                                              router: router)
-        searchRecipesTableViewController.presenter = presenter
+        RecipeListViewController.presenter = presenter
     }
 }
