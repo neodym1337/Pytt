@@ -9,6 +9,7 @@
 //Check here for basic pattern https://stackoverflow.com/documentation/ios/9467/mvp-architecture#t=201707281252273684482
 
 import UIKit
+import Localize_Swift
 
 class RecipeListViewController: UITableViewController, RecipeListView {
     
@@ -18,7 +19,7 @@ class RecipeListViewController: UITableViewController, RecipeListView {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.title = "Search recipes"
+        self.title = "RecipeListViewControllerTitle".localized()
         configurator.configure(RecipeListViewController: self)
         presenter.viewDidLoad()
         
