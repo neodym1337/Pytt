@@ -12,6 +12,9 @@ target 'Pytt' do
   pod 'SwiftLint'
   pod 'Decodable'
   pod 'SwiftWebVC'
+  pod 'SwiftMessages'
+  pod 'Localize-Swift'
+  
 
   target 'PyttTests' do
     inherit! :search_paths
@@ -20,6 +23,7 @@ target 'Pytt' do
     pod 'Nimble'
     pod 'Mockingjay'
     pod 'Decodable'
+    pod 'FBSnapshotTestCase'
   end
 
   target 'PyttUITests' do

@@ -15,17 +15,17 @@ protocol SearchRecipesRouter: ViewRouter {
 }
 
 class SearchRecipesRouterImplementation: SearchRecipesRouter {
-    fileprivate weak var searchRecipesTableViewController: SearchRecipesTableViewController?
+    fileprivate weak var RecipeListViewController: RecipeListViewController?
     fileprivate var recipe: Recipe!
     
-    init(searchRecipesTableViewController: SearchRecipesTableViewController) {
-        self.searchRecipesTableViewController = searchRecipesTableViewController
+    init(RecipeListViewController: RecipeListViewController) {
+        self.RecipeListViewController = RecipeListViewController
     }
     
     func presentDetailsView(for recipe: Recipe) {
         self.recipe = recipe
         let webVC = SwiftWebVC(urlString: recipe.sourceUrl)
-        searchRecipesTableViewController?.navigationController?.pushViewController(webVC, animated: true)
+        RecipeListViewController?.navigationController?.pushViewController(webVC, animated: true)
     }
     
     func presentScanFoodView() {

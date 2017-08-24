@@ -8,6 +8,8 @@
 
 import Foundation
 
+//Not used anymore
+
 @testable import Pytt
 
 class URLSessionStub: URLSessionProtocol {

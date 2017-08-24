@@ -8,12 +8,12 @@
 
 import UIKit
 
-protocol SearchRecipesView: class {
+protocol RecipeListView: class {
     func refreshRecipesView()
     func displayRecipesRetrievalError(title: String, message: String)
 }
 
-protocol SearchRecipesPresenter {
+protocol RecipeListPresenter {
     var numberOfRecipes: Int { get }
     var router: SearchRecipesRouter { get }
     func viewDidLoad()
@@ -23,9 +23,9 @@ protocol SearchRecipesPresenter {
     func height(forRow row: Int) -> CGFloat
 }
 
-class SearchRecipesPresenterImplementation: SearchRecipesPresenter {
+class SearchRecipesPresenterImplementation: RecipeListPresenter {
 
-    fileprivate weak var view: SearchRecipesView?
+    fileprivate weak var view: RecipeListView?
     fileprivate let recipeListUseCase: RecipeListUseCase
     
     internal let router: SearchRecipesRouter
@@ -36,7 +36,7 @@ class SearchRecipesPresenterImplementation: SearchRecipesPresenter {
         return recipes.count
     }
     
-    init(view: SearchRecipesView,
+    init(view: RecipeListView,
          recipeListUseCase: RecipeListUseCase,
          router: SearchRecipesRouter) {
         self.view = view

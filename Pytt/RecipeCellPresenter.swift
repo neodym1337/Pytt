@@ -10,7 +10,6 @@ import Foundation
 
 let dummyImage = "https://static.pexels.com/photos/70497/pexels-photo-70497.jpeg"
 
-
 protocol RecipeCellPresenter {
     var recipe: Recipe { get }
     var title: String { get }

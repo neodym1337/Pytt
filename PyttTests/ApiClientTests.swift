@@ -26,21 +26,24 @@ class ApiClientSpec: QuickSpec {
             beforeEach {
                 apiClient = ApiClientImplementation(urlSessionConfiguration: URLSessionConfiguration.default,
                                                                    completionHandlerQueue: OperationQueue.main)
-                self.stub(everything, jsonData(self.mockResponseData(), status: 200, headers: nil))
+                
                 
             }
             
             describe("fetching and parsing") {
             
                 it("is successfull") {
+                    
+                    self.stub(everything, jsonData(self.mockResponseData(), status: 200, headers: nil))
+                    
+                    
                     waitUntil(timeout: 5) { done in
                         let request = RecipesApiRequest(ingredients: "egal")
                         apiClient.execute(request: request) { (result) in
                             switch result {
                             case let .success(response):
                                 do {
-                                    let json = try JSONSerialization.jsonObject(with: response.data, options: [])
-                                    let recipes = try [Recipe].decode(json)
+                                    let gateway = ApiRecipesGatewayImplementation()
                                     expect(recipes.count) > 0
                                 } catch {
                                     fail("Could not parse response")
@@ -56,11 +59,16 @@ class ApiClientSpec: QuickSpec {
                 }
             }
         }
+        
+        afterEach {
+            self.removeAllStubs()
+        }
     }
 
     
     func mockResponseData() -> Data {
-        guard let jsonFileUrl = Bundle(for: type(of: self)).url(forResource: "recipeList", withExtension: "json") else {
+        guard let jsonFileUrl = Bundle(for: type(of: self)).url(
+                                forResource: "recipeListValid", withExtension: "json") else {
             preconditionFailure("Could not get mock response file from bundle")
         }
         guard let mockResponseData = try? Data(contentsOf: jsonFileUrl) else {

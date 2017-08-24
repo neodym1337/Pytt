@@ -37,7 +37,7 @@ extension UIColor {
     }
     
     class var lightBackground: UIColor {
-        return UIColor(hexString: "#DFF2D8") // Light background colour to group UI components with dark colour.
+        return UIColor.white//UIColor(hexString: "#DFF2D8") // Light background colour to group UI components with dark colour.
     }
     
     class var darkText: UIColor {

@@ -10,16 +10,16 @@
 
 import UIKit
 
-class SearchRecipesTableViewController: UITableViewController, SearchRecipesView {
+class RecipeListViewController: UITableViewController, RecipeListView {
     
-    var configurator = SearchRecipesConfiguratorImplementation()
-    var presenter: SearchRecipesPresenter!
+    var configurator = RecipeListConfiguratorImplementation()
+    var presenter: RecipeListPresenter!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         self.title = "Search recipes"
-        configurator.configure(searchRecipesTableViewController: self)
+        configurator.configure(RecipeListViewController: self)
         presenter.viewDidLoad()
         
         tableView.register(UINib(nibName: "SearchRecipeTableViewCell", bundle: nil),
@@ -55,7 +55,7 @@ class SearchRecipesTableViewController: UITableViewController, SearchRecipesView
         presenter.didSelect(row: indexPath.row)
     }
     
-    // MARK: - SearchRecipesView
+    // MARK: - RecipeListView
     
     func refreshRecipesView() {
         print("Did refresh table")
@@ -63,6 +63,6 @@ class SearchRecipesTableViewController: UITableViewController, SearchRecipesView
     }
     
     func displayRecipesRetrievalError(title: String, message: String) {
-        
+        showError(withMessage: message)
     }
 }
