@@ -16,11 +16,8 @@ import Nimble_Snapshots
 class SearchRecipeTableViewCellSpec: QuickSpec {
 
     override func spec() {
-        
-        //var imageUrl: URL!
-        
+
         beforeSuite {
-            
             setNimbleTolerance(0)
             
         }
@@ -37,26 +34,20 @@ class SearchRecipeTableViewCellSpec: QuickSpec {
                 
                 cell.frame = CGRect(origin: .zero, size: CGSize(width: 375, height: 100))
                 
-                cell.display(title: "Test")
-                cell.display(rating: 4)
+                cell.display(title: "Test title")
+                cell.display(rating: 3)
                 
                 let bundle = Bundle(for: type(of: self))
                 guard let image = UIImage(named: "dummyImage.jpg", in: bundle, compatibleWith: nil) else {
                     fail("Could not load image from test bundle")
                     return
                 }
-                
                 cell.display(image: image)
                 
-                let layer = cell.layer
-                
-                //expect(cell).to(recordDeviceAgnosticSnapshot())
-                expect(cell).to(haveValidDeviceAgnosticSnapshot())
-
-                
-                
-            }
             
+//                expect(cell).to(recordDeviceAgnosticSnapshot())
+                expect(cell).to(haveValidDeviceAgnosticSnapshot())
+            }
         }
     }
 }
