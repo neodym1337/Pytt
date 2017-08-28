@@ -19,12 +19,6 @@
                 <rect key="frame" x="0.0" y="0.0" width="375" height="120"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IeR-Ag-G1H">
-                        <rect key="frame" x="128" y="26" width="239" height="21"/>
-                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uZM-Zh-2Ln" customClass="CosmosView" customModule="Cosmos">
                         <rect key="frame" x="128" y="55" width="115" height="14"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -40,15 +34,21 @@
                             <constraint firstAttribute="width" secondItem="XvD-YF-YHn" secondAttribute="height" multiplier="1:1" id="kau-jQ-cSy"/>
                         </constraints>
                     </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IeR-Ag-G1H">
+                        <rect key="frame" x="128" y="17" width="239" height="21"/>
+                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
                 <constraints>
                     <constraint firstItem="uZM-Zh-2Ln" firstAttribute="leading" secondItem="IeR-Ag-G1H" secondAttribute="leading" id="ClW-Y2-59r"/>
-                    <constraint firstItem="uZM-Zh-2Ln" firstAttribute="top" secondItem="IeR-Ag-G1H" secondAttribute="bottom" constant="8" id="UTE-3l-ERX"/>
+                    <constraint firstItem="uZM-Zh-2Ln" firstAttribute="top" secondItem="IeR-Ag-G1H" secondAttribute="bottom" constant="17" id="UTE-3l-ERX"/>
                     <constraint firstAttribute="leadingMargin" secondItem="XvD-YF-YHn" secondAttribute="leading" id="ehV-HG-OxW"/>
                     <constraint firstItem="IeR-Ag-G1H" firstAttribute="leading" secondItem="XvD-YF-YHn" secondAttribute="trailing" constant="20" id="j6o-gT-P1s"/>
                     <constraint firstItem="XvD-YF-YHn" firstAttribute="centerY" secondItem="pp5-Rz-7es" secondAttribute="centerY" id="lMa-aa-IWQ"/>
                     <constraint firstAttribute="trailingMargin" secondItem="IeR-Ag-G1H" secondAttribute="trailing" id="myv-4f-e7v"/>
-                    <constraint firstItem="IeR-Ag-G1H" firstAttribute="top" secondItem="XvD-YF-YHn" secondAttribute="top" constant="16" id="s88-ac-OaN"/>
+                    <constraint firstItem="IeR-Ag-G1H" firstAttribute="top" secondItem="XvD-YF-YHn" secondAttribute="top" constant="7" id="s88-ac-OaN"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>

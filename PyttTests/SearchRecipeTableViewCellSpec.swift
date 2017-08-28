@@ -24,7 +24,7 @@ class SearchRecipeTableViewCellSpec: QuickSpec {
         
         context("a cell") { 
             
-            it("should be created") {
+            it("should have the correct layout") {
                 
                 let cellNib = UINib(nibName: "SearchRecipeTableViewCell", bundle: nil)
                 guard let cell = cellNib.instantiate(withOwner: nil, options: nil).first as? SearchRecipesTableViewCellImplementation else {
