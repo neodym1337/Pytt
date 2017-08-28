@@ -24,6 +24,7 @@ target 'Pytt' do
     pod 'Mockingjay'
     pod 'Decodable'
     pod 'FBSnapshotTestCase'
+    pod 'Nimble-Snapshots'
   end
 
   target 'PyttUITests' do

@@ -19,35 +19,31 @@ class ApiClientSpec: QuickSpec {
     override func spec() {
         super.spec()
     
+        var apiClient: ApiClient!
+        
+        beforeSuite {
+            apiClient = ApiClientImplementation(urlSessionConfiguration: URLSessionConfiguration.default,
+                                                    completionHandlerQueue: OperationQueue.main)
+        }
         
         describe("an api client") {
-            var apiClient: ApiClient!
-            
-            beforeEach {
-                apiClient = ApiClientImplementation(urlSessionConfiguration: URLSessionConfiguration.default,
-                                                                   completionHandlerQueue: OperationQueue.main)
-                
-                
-            }
-            
+
             describe("fetching and parsing") {
-            
+                
+                afterEach {
+                    self.removeAllStubs()
+                }
+
                 it("is successfull") {
-                    
+
                     self.stub(everything, jsonData(self.mockResponseData(), status: 200, headers: nil))
                     
-                    
                     waitUntil(timeout: 5) { done in
-                        let request = RecipesApiRequest(ingredients: "egal")
+                        let request = RecipesApiRequest(withIngredients: "egal")
                         apiClient.execute(request: request) { (result) in
                             switch result {
-                            case let .success(response):
-                                do {
-                                    let gateway = ApiRecipesGatewayImplementation()
-                                    expect(recipes.count) > 0
-                                } catch {
-                                    fail("Could not parse response")
-                                }
+                            case let .success(result):
+                                expect(result).toNot(beNil())
                                 break
                             case .failure(_):
                                 fail("Expected successful response")
@@ -60,9 +56,7 @@ class ApiClientSpec: QuickSpec {
             }
         }
         
-        afterEach {
-            self.removeAllStubs()
-        }
+
     }
 
     

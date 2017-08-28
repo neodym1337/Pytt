@@ -19,7 +19,12 @@ class RecipeListViewController: UITableViewController, RecipeListView {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.title = "RecipeListViewControllerTitle".localized()
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(setText),
+                                               name: NSNotification.Name(rawValue: LCLLanguageChangeNotification),
+                                               object: nil)
+        setText()
+        
         configurator.configure(RecipeListViewController: self)
         presenter.viewDidLoad()
         
@@ -29,6 +34,10 @@ class RecipeListViewController: UITableViewController, RecipeListView {
         tableView.separatorStyle = .none
         view.backgroundColor = UIColor.lightBackground
         tableView.backgroundColor = UIColor.lightBackground
+    }
+    
+    func setText() {
+        self.title = "RecipeListViewControllerTitle".localized()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

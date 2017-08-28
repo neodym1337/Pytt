@@ -48,7 +48,7 @@ struct ApiResponse {
     let httpUrlResponse: HTTPURLResponse
     let data: Data
     
-    init(data: Data, httpUrlResponse: HTTPURLResponse) throws {
+    init(data: Data, httpUrlResponse: HTTPURLResponse) {
         self.httpUrlResponse = httpUrlResponse
         self.data = data
     }

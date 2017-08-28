@@ -23,7 +23,7 @@ class ApiRecipesGatewayImplementation: ApiRecipesGateway {
     }
     
     func fetchRecipes(ingredients: String, completionHandler: @escaping FetchRecipesEntityGatewayCompletionHandler) {
-        let request = RecipesApiRequest(ingredients: ingredients)
+        let request = RecipesApiRequest(withIngredients: ingredients)
         apiClient.execute(request: request) { [unowned self] (result: Result<ApiResponse>) in
             switch result {
             case let .success(response):

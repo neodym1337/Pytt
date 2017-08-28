@@ -46,6 +46,7 @@ class SearchRecipesTableViewCellImplementation: UITableViewCell, SearchRecipesTa
         ratingView.settings.emptyColor = UIColor.clear
         ratingView.settings.filledBorderColor = UIColor.affirmation
         ratingView.settings.filledColor = UIColor.affirmation
+        
     }
     
     func display(title: String) {

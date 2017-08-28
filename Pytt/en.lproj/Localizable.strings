@@ -7,4 +7,6 @@
 */
 
 
-"RecipeListViewControllerTitle" = "Search recipes";
+//"RecipeListViewControllerTitle" = "Search recipes";
+
+"RecipeListViewControllerTitle" = "Search recipes too long string";

@@ -47,27 +47,22 @@ class ApiClientImplementation: ApiClient {
         
         print("Request with url: " + request.urlRequest.url!.absoluteString)
         let dataTask = urlSession.dataTask(with: request.urlRequest) { (data, response, error) in
-            // No response
             guard let httpUrlResponse = response as? HTTPURLResponse else {
                 completionHandler(Result.failure(NetworkRequestError(error: error)))
                 return
             }
-            
+            guard let data = data else {
+                completionHandler(Result.failure(NetworkRequestError(error: error)))
+                return
+            }
+    
             let successRange = 200...299
             if successRange.contains(httpUrlResponse.statusCode) { //Got response
-                do {
-                    let response = try ApiResponse(data:data!, httpUrlResponse: httpUrlResponse)
-                    //Could get response
-                    completionHandler(Result.success(response))
-                } catch {
-                    completionHandler(Result.failure(error))
-                }
+                completionHandler(Result.success(ApiResponse(data:data, httpUrlResponse: httpUrlResponse)))
             } else {
                 completionHandler(Result.failure(ApiError(data: data, httpUrlResponse: httpUrlResponse)))
             }
         }
-        
-        
         dataTask.resume()
     }
 }

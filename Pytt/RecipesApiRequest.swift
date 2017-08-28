@@ -35,7 +35,7 @@ struct RecipesApiRequest: ApiRequest {
     var urlRequest: URLRequest
     var ingredients: String
     
-    init(ingredients: String) {
+    init(withIngredients ingredients: String) {
         self.ingredients = ingredients
         let escapedIngredients = ingredients.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed)!
         let urlString = https + baseUrl + apiUrl + searchApi + "key=" + apiKey + "&q=" + escapedIngredients

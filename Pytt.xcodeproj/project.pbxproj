@@ -60,6 +60,8 @@
 		D8EDD9621F2B62F00044E66B /* ViewRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8EDD9611F2B62F00044E66B /* ViewRouter.swift */; };
 		D8EDD9651F2B63A30044E66B /* DisplayRecipeSearchList.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8EDD9641F2B63A30044E66B /* DisplayRecipeSearchList.swift */; };
 		D8F244F71F2B3E51005E2DEA /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8F244F61F2B3E51005E2DEA /* Recipe.swift */; };
+		D8F7C7A01F5405FB0017226D /* SearchRecipeTableViewCellSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8F7C79F1F5405FB0017226D /* SearchRecipeTableViewCellSpec.swift */; };
+		D8F7C7A21F5406740017226D /* dummyImage.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D8F7C7A11F5406740017226D /* dummyImage.jpg */; };
 		DC3D170BDAAD36B1F05EAF60 /* Pods_PyttTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D0A110DEF121AA6391DACD7 /* Pods_PyttTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -146,6 +148,8 @@
 		D8EDD9611F2B62F00044E66B /* ViewRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewRouter.swift; sourceTree = "<group>"; };
 		D8EDD9641F2B63A30044E66B /* DisplayRecipeSearchList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DisplayRecipeSearchList.swift; sourceTree = "<group>"; };
 		D8F244F61F2B3E51005E2DEA /* Recipe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
+		D8F7C79F1F5405FB0017226D /* SearchRecipeTableViewCellSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchRecipeTableViewCellSpec.swift; sourceTree = "<group>"; };
+		D8F7C7A11F5406740017226D /* dummyImage.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = dummyImage.jpg; sourceTree = "<group>"; };
 		ED6CE4F33C67A741E4388F9F /* Pods_PyttUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PyttUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FE0181E8D7B7C4A05DF986D4 /* Pods_Pytt.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Pytt.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -297,6 +301,7 @@
 				D8268BDA1F4F018B0088A2E5 /* Layout */,
 				D88CCE431F45913400854CE7 /* Entities */,
 				D80EC2961F33215F00BBD472 /* Gateways */,
+				D8F7C79E1F5405E00017226D /* Views */,
 				D80EC2991F33441700BBD472 /* Presenters */,
 				D80EC29A1F33442700BBD472 /* Helpers */,
 				D8272E4D1F2B2D0A00560A5C /* Info.plist */,
@@ -403,6 +408,7 @@
 		D8982B211F346E930035F139 /* Responses */ = {
 			isa = PBXGroup;
 			children = (
+				D8F7C7A11F5406740017226D /* dummyImage.jpg */,
 				D88CCE461F45BCEC00854CE7 /* recipeValid.json */,
 				D8982B221F346EAD0035F139 /* recipeListValid.json */,
 				D88CCE481F4706A800854CE7 /* recipeNoTitle.json */,
@@ -462,6 +468,14 @@
 				D8F244F61F2B3E51005E2DEA /* Recipe.swift */,
 			);
 			name = Entities;
+			sourceTree = "<group>";
+		};
+		D8F7C79E1F5405E00017226D /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				D8F7C79F1F5405FB0017226D /* SearchRecipeTableViewCellSpec.swift */,
+			);
+			name = Views;
 			sourceTree = "<group>";
 		};
 		E449A10860C73BAE95FAA7BF /* Frameworks */ = {
@@ -607,6 +621,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D8F7C7A21F5406740017226D /* dummyImage.jpg in Resources */,
 				D8982B231F346EAD0035F139 /* recipeListValid.json in Resources */,
 				D88CCE4B1F4706D200854CE7 /* recipeNoSource.json in Resources */,
 				D88CCE471F45BCEC00854CE7 /* recipeValid.json in Resources */,
@@ -727,6 +742,7 @@
 				"${BUILT_PRODUCTS_DIR}/FBSnapshotTestCase/FBSnapshotTestCase.framework",
 				"${BUILT_PRODUCTS_DIR}/Mockingjay/Mockingjay.framework",
 				"${BUILT_PRODUCTS_DIR}/Nimble/Nimble.framework",
+				"${BUILT_PRODUCTS_DIR}/Nimble-Snapshots/Nimble_Snapshots.framework",
 				"${BUILT_PRODUCTS_DIR}/Quick/Quick.framework",
 				"${BUILT_PRODUCTS_DIR}/URITemplate/URITemplate.framework",
 			);
@@ -736,6 +752,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSnapshotTestCase.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Mockingjay.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Nimble.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Nimble_Snapshots.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Quick.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/URITemplate.framework",
 			);
@@ -860,6 +877,7 @@
 				D86DE9C31F33488D003EDCB8 /* URLSessionStub.swift in Sources */,
 				D86DE9C51F334C5D003EDCB8 /* ApiClient.swift in Sources */,
 				D8268BDC1F4F02630088A2E5 /* RecipeListViewControllerSpec.swift in Sources */,
+				D8F7C7A01F5405FB0017226D /* SearchRecipeTableViewCellSpec.swift in Sources */,
 				D88CCE451F45914500854CE7 /* Recipe.swift in Sources */,
 				D80EC2981F33217C00BBD472 /* ApiClientTests.swift in Sources */,
 			);

@@ -106,6 +106,7 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/FBSnapshotTestCase/FBSnapshotTestCase.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/Mockingjay/Mockingjay.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/Nimble/Nimble.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/Nimble-Snapshots/Nimble_Snapshots.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/Quick/Quick.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/URITemplate/URITemplate.framework"
 fi
@@ -114,6 +115,7 @@ if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/FBSnapshotTestCase/FBSnapshotTestCase.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/Mockingjay/Mockingjay.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/Nimble/Nimble.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/Nimble-Snapshots/Nimble_Snapshots.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/Quick/Quick.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/URITemplate/URITemplate.framework"
 fi
