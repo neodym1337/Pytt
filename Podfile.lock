@@ -22,6 +22,9 @@ PODS:
     - Nimble
     - Quick
   - Quick (1.1.0)
+  - RxCocoa (4.0.0):
+    - RxSwift (~> 4.0)
+  - RxSwift (4.0.0)
   - SDWebImage (4.0.0):
     - SDWebImage/Core (= 4.0.0)
   - SDWebImage/Core (4.0.0)
@@ -39,6 +42,8 @@ DEPENDENCIES:
   - Nimble
   - Nimble-Snapshots
   - Quick
+  - RxCocoa
+  - RxSwift
   - SDWebImage
   - SwiftLint
   - SwiftMessages
@@ -53,12 +58,14 @@ SPEC CHECKSUMS:
   Nimble: 1527fd1bd2b4cf0636251a36bc8ab37e81da8347
   Nimble-Snapshots: e743439f26c2fa99d8f7e0d7c01c99bcb40aa6f2
   Quick: dafc587e21eed9f4cab3249b9f9015b0b7a7f71d
+  RxCocoa: d62846ca96495d862fa4c59ea7d87e5031d7340e
+  RxSwift: fd680d75283beb5e2559486f3c0ff852f0d35334
   SDWebImage: 76a6348bdc74eb5a55dd08a091ef298e56b55e41
   SwiftLint: b8b683208cc09640898f16318a7a452274e91f61
   SwiftMessages: e20aa1557fde1525ea369361bec4943cc0d08e7c
   SwiftWebVC: 4e0e69f80db2ea78a0ee33e8bac053e1028fb1d7
   URITemplate: a5acb3f76c6a2338116fde88b658d83f91bbac45
 
-PODFILE CHECKSUM: 15ab7ba8bf7480a40897cbe179c53c71bf1206f0
+PODFILE CHECKSUM: 7136a6d9ebf8842bc888a947045e35a462076797
 
 COCOAPODS: 1.3.1

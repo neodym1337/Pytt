@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RxSwift
 
 protocol RecipeListView: class {
     func refreshRecipesView()
@@ -67,6 +68,7 @@ class SearchRecipesPresenterImplementation: RecipeListPresenter {
     
     func searchRecipes(for ingredients: String) {
         print("Search recipes")
+        
         self.recipeListUseCase.displayRecipes(ingredients: ingredients) { [unowned self] (result) in
             switch result {
             case let .success(recipes):

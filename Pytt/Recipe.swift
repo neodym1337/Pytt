@@ -8,6 +8,7 @@
 
 import Foundation
 import Decodable
+import protocol Decodable.Decodable
 
 struct Recipe {
     var id: String

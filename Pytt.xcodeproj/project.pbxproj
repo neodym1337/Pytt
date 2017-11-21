@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		05C899A8E4AAE52F181F821E /* Pods_PyttUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED6CE4F33C67A741E4388F9F /* Pods_PyttUITests.framework */; };
 		499C3013043D12A33642024F /* Pods_Pytt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE0181E8D7B7C4A05DF986D4 /* Pods_Pytt.framework */; };
+		9F0C19911FBB2BC500D8FEA2 /* SearchRecipesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F0C19901FBB2BC500D8FEA2 /* SearchRecipesViewModel.swift */; };
+		9FF1733D1FBB47A100205ECD /* ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FF1733C1FBB47A100205ECD /* ActivityIndicator.swift */; };
+		9FF1733F1FBC238A00205ECD /* ErrorTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FF1733E1FBC238A00205ECD /* ErrorTracker.swift */; };
+		9FF173411FBC23B200205ECD /* ObservableExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FF173401FBC23B200205ECD /* ObservableExtensions.swift */; };
 		D80EC28F1F33082200BBD472 /* RecipeDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D80EC28E1F33082200BBD472 /* RecipeDetailsViewController.swift */; };
 		D80EC2911F33082900BBD472 /* RecipeDetailsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D80EC2901F33082900BBD472 /* RecipeDetailsPresenter.swift */; };
 		D80EC2931F33083700BBD472 /* RecipeDetailsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D80EC2921F33083700BBD472 /* RecipeDetailsRouter.swift */; };
@@ -88,6 +92,10 @@
 		5D0A110DEF121AA6391DACD7 /* Pods_PyttTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PyttTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7430F2B21A14D995E557137B /* Pods-PyttTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PyttTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PyttTests/Pods-PyttTests.debug.xcconfig"; sourceTree = "<group>"; };
 		9E63F94D2C2A76068003288C /* Pods-PyttTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PyttTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-PyttTests/Pods-PyttTests.release.xcconfig"; sourceTree = "<group>"; };
+		9F0C19901FBB2BC500D8FEA2 /* SearchRecipesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRecipesViewModel.swift; sourceTree = "<group>"; };
+		9FF1733C1FBB47A100205ECD /* ActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicator.swift; sourceTree = "<group>"; };
+		9FF1733E1FBC238A00205ECD /* ErrorTracker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorTracker.swift; sourceTree = "<group>"; };
+		9FF173401FBC23B200205ECD /* ObservableExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObservableExtensions.swift; sourceTree = "<group>"; };
 		A834B05149482427575B2676 /* Pods-Pytt.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pytt.release.xcconfig"; path = "Pods/Target Support Files/Pods-Pytt/Pods-Pytt.release.xcconfig"; sourceTree = "<group>"; };
 		B182FC3AD7305241337CDCAA /* Pods-Pytt.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pytt.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Pytt/Pods-Pytt.debug.xcconfig"; sourceTree = "<group>"; };
 		D80EC28E1F33082200BBD472 /* RecipeDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipeDetailsViewController.swift; sourceTree = "<group>"; };
@@ -358,6 +366,9 @@
 				D8566CD51F30B4D700ACBF4E /* InterfaceOrientation.swift */,
 				D88CCE4E1F47079100854CE7 /* JSONSerialization+Parse.swift */,
 				D8268BD81F4EF5DC0088A2E5 /* UIViewController+Alert.swift */,
+				9FF1733C1FBB47A100205ECD /* ActivityIndicator.swift */,
+				9FF1733E1FBC238A00205ECD /* ErrorTracker.swift */,
+				9FF173401FBC23B200205ECD /* ObservableExtensions.swift */,
 			);
 			name = Other;
 			sourceTree = "<group>";
@@ -436,6 +447,7 @@
 				D8EDD95D1F2B61BC0044E66B /* SearchRecipesPresenter.swift */,
 				D8EDD95F1F2B62C60044E66B /* SearchRecipesRouter.swift */,
 				D88962B71F2F2B7E00EC11D8 /* SearchRecipesConfigurator.swift */,
+				9F0C19901FBB2BC500D8FEA2 /* SearchRecipesViewModel.swift */,
 			);
 			name = SearchRecipes;
 			sourceTree = "<group>";
@@ -698,6 +710,8 @@
 				"${BUILT_PRODUCTS_DIR}/Cosmos/Cosmos.framework",
 				"${BUILT_PRODUCTS_DIR}/Decodable/Decodable.framework",
 				"${BUILT_PRODUCTS_DIR}/Localize-Swift/Localize_Swift.framework",
+				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
+				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftMessages/SwiftMessages.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftWebVC/SwiftWebVC.framework",
@@ -707,6 +721,8 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Cosmos.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Decodable.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Localize_Swift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftMessages.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftWebVC.framework",
@@ -832,6 +848,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9FF1733F1FBC238A00205ECD /* ErrorTracker.swift in Sources */,
 				D8E0205A1F2F6AFD008AD6ED /* UIColor+Hex.swift in Sources */,
 				D832FD0E1F2B422D0074E6FF /* RecipesGateway.swift in Sources */,
 				D8EDD9621F2B62F00044E66B /* ViewRouter.swift in Sources */,
@@ -839,6 +856,7 @@
 				D88962B81F2F2B7E00EC11D8 /* SearchRecipesConfigurator.swift in Sources */,
 				D8EDD9601F2B62C60044E66B /* SearchRecipesRouter.swift in Sources */,
 				D85F6D921F2F8E070023D64C /* CaptureViewController.swift in Sources */,
+				9FF173411FBC23B200205ECD /* ObservableExtensions.swift in Sources */,
 				D8E020581F2F5EA5008AD6ED /* RecipeCellPresenter.swift in Sources */,
 				D88CCE4F1F47079100854CE7 /* JSONSerialization+Parse.swift in Sources */,
 				D81F8C1C1F309AC10075B3BD /* CaptureConfigurator.swift in Sources */,
@@ -848,7 +866,9 @@
 				D8272E6B1F2B334400560A5C /* ApiResponse.swift in Sources */,
 				D8EDD95C1F2B61AA0044E66B /* SearchRecipesTableViewController.swift in Sources */,
 				D80EC2911F33082900BBD472 /* RecipeDetailsPresenter.swift in Sources */,
+				9FF1733D1FBB47A100205ECD /* ActivityIndicator.swift in Sources */,
 				D8F244F71F2B3E51005E2DEA /* Recipe.swift in Sources */,
+				9F0C19911FBB2BC500D8FEA2 /* SearchRecipesViewModel.swift in Sources */,
 				D85F6D941F2F8EDC0023D64C /* FrameExtractor.swift in Sources */,
 				D81F8C201F309C900075B3BD /* ImageDetector.swift in Sources */,
 				D8566CD41F30B19B00ACBF4E /* VideoPreviewView.swift in Sources */,

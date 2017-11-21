@@ -9,12 +9,18 @@
 //Check here for basic pattern https://stackoverflow.com/documentation/ios/9467/mvp-architecture#t=201707281252273684482
 
 import UIKit
+import RxSwift
+import RxCocoa
 import Localize_Swift
 
-class RecipeListViewController: UITableViewController, RecipeListView {
+class RecipeListViewController: UIViewController, UITableViewDelegate, UISearchBarDelegate {
+    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var searchBar: UISearchBar!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     var configurator = RecipeListConfiguratorImplementation()
-    var presenter: RecipeListPresenter!
+    var viewModel: SearchRecipesViewModelType!
+    private let bag = DisposeBag()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,53 +32,48 @@ class RecipeListViewController: UITableViewController, RecipeListView {
         setText()
         
         configurator.configure(RecipeListViewController: self)
-        presenter.viewDidLoad()
         
         tableView.register(UINib(nibName: "SearchRecipeTableViewCell", bundle: nil),
                            forCellReuseIdentifier: SearchRecipesTableViewCellImplementation.defaultReuseIdentifier)
-        tableView.tableFooterView = UIView(frame: CGRect.zero)
-        tableView.separatorStyle = .none
-        view.backgroundColor = UIColor.lightBackground
-        tableView.backgroundColor = UIColor.lightBackground
+        
+        let cellId = SearchRecipesTableViewCellImplementation.defaultReuseIdentifier
+        let cellType = SearchRecipesTableViewCellImplementation.self
+        viewModel.outputs.tableContent
+            .drive(tableView.rx.items(cellIdentifier: cellId, cellType: cellType )) { _, viewModel, cell in
+                cell.bind(viewModel: viewModel)
+            }
+            .disposed(by: bag)
+        
+        viewModel.outputs.isLoading
+            .drive(activityIndicator.rx.isAnimating)
+            .disposed(by: bag)
+        
+        viewModel.outputs.errors
+            .drive(onNext: { [unowned self] error in
+                // For simplicity's sake of demo purpose, a localizedDescription message is shown
+                self.showError(withMessage: error.localizedDescription)
+            }).disposed(by: bag)
+        
+        viewModel.outputs.selectedRecipe
+            .drive()
+            .disposed(by: bag)
+        
+        viewModel.inputs.viewLoaded()
     }
     
-    func setText() {
+    @objc func setText() {
         self.title = "RecipeListViewControllerTitle".localized()
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        presenter.router.prepare(for: segue, sender: sender)
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        viewModel.inputs.recipeChanged(recipe: searchText)
     }
     
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return presenter.numberOfRecipes
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        viewModel.inputs.rowSelected(row: indexPath.row)
     }
     
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        guard let cell = tableView.dequeueReusableCell(withIdentifier:
-            SearchRecipesTableViewCellImplementation.defaultReuseIdentifier, for: indexPath)
-            as? SearchRecipesTableViewCellImplementation else { return UITableViewCell() }
-        presenter.configure(cell: cell, forRow: indexPath.row)
-        return cell
-    }
-    
-    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return presenter.height(forRow: indexPath.row)
-    }
-    
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        presenter.didSelect(row: indexPath.row)
-    }
-    
-    // MARK: - RecipeListView
-    
-    func refreshRecipesView() {
-        print("Did refresh table")
-        tableView.reloadData()
-    }
-    
-    func displayRecipesRetrievalError(title: String, message: String) {
-        showError(withMessage: message)
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return viewModel.outputs.height(forRow: indexPath.row)
     }
 }

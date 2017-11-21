@@ -16,6 +16,18 @@ protocol SearchRecipesTableViewCell {
     func display(rating: Double)
 }
 
+class SearchRecipesCellViewModel {
+    let title: String
+    let rating: Double
+    let imageUrl: URL
+    
+    init(recipe: Recipe) {
+        title = recipe.title
+        rating = recipe.rank
+        imageUrl = URL(string: recipe.imageUrl)!
+    }
+}
+
 class SearchRecipesTableViewCellImplementation: UITableViewCell, SearchRecipesTableViewCell {
 
     @IBOutlet weak var foodImageView: UIImageView!
@@ -47,6 +59,12 @@ class SearchRecipesTableViewCellImplementation: UITableViewCell, SearchRecipesTa
         ratingView.settings.filledBorderColor = UIColor.affirmation
         ratingView.settings.filledColor = UIColor.affirmation
         
+    }
+    
+    func bind(viewModel: SearchRecipesCellViewModel) {
+        titleLabel.text = viewModel.title
+        ratingView.rating = viewModel.rating
+        foodImageView.sd_setImage(with: viewModel.imageUrl)
     }
     
     func display(title: String) {

@@ -14,7 +14,8 @@ target 'Pytt' do
   pod 'SwiftWebVC'
   pod 'SwiftMessages'
   pod 'Localize-Swift'
-  
+  pod 'RxSwift'
+  pod 'RxCocoa'
 
   target 'PyttTests' do
     inherit! :search_paths

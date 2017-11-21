@@ -25,9 +25,10 @@ class RecipeListConfiguratorImplementation: SearchRecipesConfigurator {
         let router = SearchRecipesRouterImplementation(RecipeListViewController:
                                                         RecipeListViewController)
         
-        let presenter = SearchRecipesPresenterImplementation(view: RecipeListViewController,
-                                                             recipeListUseCase: recipeListUseCase,
-                                                             router: router)
-        RecipeListViewController.presenter = presenter
+        let viewModel = SearchRecipesViewModel(
+            useCase: recipeListUseCase,
+            router: router)
+        
+        RecipeListViewController.viewModel = viewModel
     }
 }

@@ -14,6 +14,113 @@
 
 import UIKit
 
+let themeChanged = "themeChangedNotification"
+
+protocol Themeable {
+    func applyTheme()
+    func setThemeListener()
+}
+
+struct Theme {
+    
+    init() {
+        
+        
+    }
+    
+    init(json:NSDictionary, assets:NSDictionary) {
+        
+        //Init with json
+        
+        //Reference to assets from disk
+    }
+    
+    //Colors
+    var primaryColor: UIColor {
+        return UIColor(hexString: "#4FCEAD")
+    }
+    
+    var secondaryColor: UIColor {
+        return UIColor(hexString: "#4FCEAD")
+    }
+    
+    var alertColor: UIColor {
+        return UIColor(hexString: "#4FCEAD")
+    }
+    
+    var headerFont : UIFont {
+        return UIFont()
+    }
+    
+    var textAlignment:NSTextAlignment {
+        return NSTextAlignment.right
+    }
+}
+
+
+struct ThemeManager {
+    
+    static func loadTheme() {
+        //1. Load theme from content server, json and assets
+        
+        //2. Possibly notify app during runtime that new theme is loaded
+    }
+    
+    static func currentTheme() -> Theme {
+        //Get from userdefauls serializable
+        return Theme()
+    }
+    
+    static func apply() {
+        
+        //Use UIAppearance when possible - Set UIAppearance
+        UISearchBar.appearance().tintColor = currentTheme().lightBackground
+        UINavigationBar.appearance().tintColor = currentTheme().lightBackground
+        UINavigationBar.appearance().barTintColor = currentTheme().lightBackground
+        
+        UINavigationBar.appearance().translucent = currentTheme().lightBackground
+        UINavigationBar.appearance().barTintColor = currentTheme().lightBackground
+        UINavigationBar.appearance().titleTextAttributes = [
+            NSForegroundColorAttributeName: currentTheme().lightBackground
+        ]
+    }
+    
+}
+
+class ThemableButton: UIButton, Themeable {
+    
+    init(theme: Theme) {
+        addThemeListener()
+    }
+    
+    func setThemeListener() {
+        
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(self.batteryLevelChanged),
+            name: themeChanged,
+            object: nil)
+    }
+}
+
+class CallToActionButton: ThemableButton {
+    
+    func applyTheme() {
+        backgroundColor = ThemeManager.currentTheme().primaryColor
+        titleLabel?.font = ThemeManager.currentTheme().headerFont
+        titleLabel?.textAlignment = ThemeManager.currentTheme().textAlignment
+    }
+}
+
+class LogOutButton: ThemableButton {
+    
+    func applyTheme() {
+        backgroundColor = ThemeManager.currentTheme().alertColor
+        titleLabel?.font = ThemeManager.currentTheme().headerFont
+    }
+}
+
+
 extension UIColor {
     
     class var theme: UIColor {
@@ -21,6 +128,8 @@ extension UIColor {
     }
     
     class var border: UIColor {
+        
+        
         return UIColor(hexString: "#F0B67F") // Hair line separators in between views.
     }
     
@@ -58,14 +167,5 @@ extension UIColor {
     
     class func custom(hexString: String, _ opacity: Float) -> UIColor {
         return UIColor(hexString: hexString).withAlphaComponent(CGFloat(opacity))
-    }
-}
-
-struct Theme {
-    
-    static func apply() {
-        UISearchBar.appearance().tintColor = UIColor.lightBackground
-        UINavigationBar.appearance().tintColor = UIColor.lightBackground
-        UINavigationBar.appearance().barTintColor = UIColor.lightBackground
     }
 }
