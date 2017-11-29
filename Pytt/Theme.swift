@@ -16,12 +16,7 @@ import UIKit
 
 let themeChanged = "themeChangedNotification"
 
-protocol Themeable {
-    func applyTheme()
-    func setThemeListener()
-}
-
-struct Theme {
+struct Skin {
     
     init() {
         
@@ -47,6 +42,14 @@ struct Theme {
     var alertColor: UIColor {
         return UIColor(hexString: "#4FCEAD")
     }
+
+    var darkTextColor: UIColor {
+        return UIColor(hexString: "#4FCEAD")
+    }
+
+    var lightTextColor: UIColor {
+        return UIColor(hexString: "#4FCEAD")
+    }
     
     var headerFont : UIFont {
         return UIFont()
@@ -58,67 +61,114 @@ struct Theme {
 }
 
 
-struct ThemeManager {
+struct SkinManager {
     
-    static func loadTheme() {
+    static func loadSkin() {
         //1. Load theme from content server, json and assets
         
         //2. Possibly notify app during runtime that new theme is loaded
     }
     
-    static func currentTheme() -> Theme {
+    var currentSkin: Skin {
         //Get from userdefauls serializable
-        return Theme()
+        return Skin()
     }
     
     static func apply() {
         
         //Use UIAppearance when possible - Set UIAppearance
-        UISearchBar.appearance().tintColor = currentTheme().lightBackground
-        UINavigationBar.appearance().tintColor = currentTheme().lightBackground
-        UINavigationBar.appearance().barTintColor = currentTheme().lightBackground
+        UISearchBar.appearance().tintColor = currentSkin.lightBackground
+        UINavigationBar.appearance().tintColor = currentSkin.lightBackground
+        UINavigationBar.appearance().barTintColor = currentSkin.lightBackground
         
-        UINavigationBar.appearance().translucent = currentTheme().lightBackground
-        UINavigationBar.appearance().barTintColor = currentTheme().lightBackground
+        UINavigationBar.appearance().translucent = currentSkin.lightBackground
+        UINavigationBar.appearance().barTintColor = currentSkin.lightBackground
         UINavigationBar.appearance().titleTextAttributes = [
-            NSForegroundColorAttributeName: currentTheme().lightBackground
+            NSForegroundColorAttributeName: currentSkin.lightBackground
         ]
     }
     
 }
 
-class ThemableButton: UIButton, Themeable {
-    
-    init(theme: Theme) {
-        addThemeListener()
+//Example protocol
+protocol Skinable {
+    var skin: Skin { get set }
+    func applySkin(skin: Skin)
+    init(with skin: Skin)
+}
+
+//Example base-class where we set up a ui-component group. All CTA buttons have an icon and one label
+class CTAButton: UIButton {
+    var label:UILabel
+    var icon:UIImageView
+
+    //Default init function of a default iOS SDK button
+    init() {
+        super.init(frame: CGRect.zero)
+        //Configure label and icon here
     }
-    
-    func setThemeListener() {
-        
-        NotificationCenter.default.addObserver(
-            self,
-            selector: #selector(self.batteryLevelChanged),
-            name: themeChanged,
-            object: nil)
+
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
 }
 
-class CallToActionButton: ThemableButton {
-    
-    func applyTheme() {
-        backgroundColor = ThemeManager.currentTheme().primaryColor
-        titleLabel?.font = ThemeManager.currentTheme().headerFont
-        titleLabel?.textAlignment = ThemeManager.currentTheme().textAlignment
+//Skinnable version of base class, where we map skin to ui. 
+class PrimaryCTAButton: CTAButton, Skinable {
+    var skin: Skin
+
+    //This function can be extended in future to observe run-time skin change
+    func applySkin(skin: Skin) {
+        self.skin = skin
+        self.backgroundColor = skin.primaryColor
+        self.label.textColor = skin.lightTextColor
+    }
+
+    required init(with skin: Skin) {
+        self.skin = skin
+        applySkin(skin: skin)
+    }
+
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
 }
 
-class LogOutButton: ThemableButton {
-    
-    func applyTheme() {
-        backgroundColor = ThemeManager.currentTheme().alertColor
-        titleLabel?.font = ThemeManager.currentTheme().headerFont
+class AlertCTAButton: CTAButton, Skinable {
+    var skin: Skin
+
+    func applySkin(skin: Skin) {
+        self.skin = skin
+        self.backgroundColor = skin.alertColor
+        self.label.textColor = skin.darkTextColor
+    }
+
+    required init(with skin: Skin) {
+        self.skin = skin
+        applySkin(skin: skin)
+    }
+
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
 }
+
+//class SkinableButton: UIButton, Skinable {
+//
+//    init(theme: Theme) {
+//        addThemeListener()
+//    }
+//
+//    func setThemeListener() {
+//
+//        NotificationCenter.default.addObserver(
+//            self,
+//            selector: #selector(self.batteryLevelChanged),
+//            name: themeChanged,
+//            object: nil)
+//    }
+//}
+
 
 
 extension UIColor {
